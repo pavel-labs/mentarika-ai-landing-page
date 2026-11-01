@@ -1,11 +1,11 @@
 ---
-import { getCollection } from 'astro:content';
 import type { InferGetStaticPropsType } from 'astro';
 import BlogPostView from '../../../features/blog/BlogPostView.astro';
+import { getPublishedPosts, getPostSlug } from '../../../content/blog';
 
 export const getStaticPaths = async () => {
-  const posts = await getCollection('blog', (p) => !p.data.draft);
-  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+  const posts = await getPublishedPosts('pl');
+  return posts.map((post) => ({ params: { slug: getPostSlug(post) }, props: { post } }));
 };
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;

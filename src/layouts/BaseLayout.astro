@@ -34,9 +34,9 @@ interface Props {
   analytics?: boolean;
   robots?: string;
   /**
-   * Content that exists in one language only (the English blog) and is merely served
-   * under every locale prefix. The canonical then points at the English URL and no
-   * hreflang alternates are emitted – otherwise each locale copy is a duplicate page.
+   * Content that exists in one language only but is served under every locale prefix.
+   * The canonical points at its source URL and no hreflang alternates are emitted –
+   * otherwise each locale copy is a duplicate page.
    */
   singleLanguage?: boolean;
 }

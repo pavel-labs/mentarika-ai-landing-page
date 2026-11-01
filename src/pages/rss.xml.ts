@@ -6,7 +6,7 @@ import { localePath, withBase } from '../i18n';
 import { marketingSnapshot } from '../marketing/content';
 
 export async function GET(context: APIContext) {
-  const posts = await getCollection('blog', (p) => !p.data.draft);
+  const posts = await getCollection('blog', (p) => !p.data.draft && p.data.locale === 'en');
   return rss({
     title: `${SITE.name} – Blog`,
     description: 'Launch milestones and product updates from Mentarika.',

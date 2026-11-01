@@ -513,6 +513,7 @@ export const es: Dict = {
       primary: 'Visitar el blog',
       pathsEyebrow: 'Rutas de lectura',
       pathsTitle: 'Agrupados según lo que estás preparando.',
+      relatedReading: 'Lecturas relacionadas',
     },
   },
 

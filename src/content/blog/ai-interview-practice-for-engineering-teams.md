@@ -1,6 +1,7 @@
 ---
 title: 'AI interview practice for engineering teams: what it can and can’t do'
 date: 2026-09-28
+locale: en
 summary: 'How engineering organizations can use AI interview practice and coding assessments to keep engineers sharp and screen candidates consistently – and where a human still has to decide.'
 ---
 

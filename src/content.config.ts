@@ -2,13 +2,14 @@ import { glob } from 'astro/loaders';
 import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
 
-// Editorial posts are written in English; localized CMS articles appear in the same archive.
+// Each editorial post has an English source and locale-specific Markdown translations.
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
     summary: z.string(),
+    locale: z.enum(['en', 'de', 'es', 'ru', 'pl']).default('en'),
     draft: z.boolean().default(false),
   }),
 });

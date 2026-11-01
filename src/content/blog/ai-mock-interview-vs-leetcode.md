@@ -1,6 +1,7 @@
 ---
 title: 'AI mock interview vs. LeetCode: what each tool actually trains'
 date: 2026-05-19
+locale: en
 summary: 'LeetCode sharpens implementation speed. A mock interviewer stresses structure, trade-offs, and pressure. Serious prep usually needs both.'
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: 'Behavioral interview prep for software engineers'
 date: 2026-05-19
+locale: en
 summary: 'Behavioral rounds are not a soft side quest. They are where many strong engineers sound vague, passive, or less senior than they are.'
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: 'Best AI tools for technical interview prep'
 date: 2026-05-19
+locale: en
 summary: 'The useful question is not which tool has the flashiest demo. It is which one actually improves how you perform in an interview loop.'
 ---
 

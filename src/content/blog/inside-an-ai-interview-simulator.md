@@ -1,6 +1,7 @@
 ---
 title: 'Inside an AI interview simulator: the architecture, at a high level'
 date: 2026-05-19
+locale: en
 summary: 'What it takes to make an AI interviewer feel demanding and coherent, without turning the product into a bag of disconnected model calls.'
 ---
 

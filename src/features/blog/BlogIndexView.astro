@@ -9,6 +9,7 @@ import {
   getEditorialEntries,
   formatPostDate,
   clustersWithPosts,
+  getPostSlug,
 } from '../../content/blog';
 import { localePath, localeHome } from '../../i18n/index';
 
@@ -19,7 +20,7 @@ const { locale } = Astro.props;
 const t = getDict(locale);
 
 const [posts, entries] = await Promise.all([
-  getPublishedPosts(),
+  getPublishedPosts(locale),
   getEditorialEntries(locale),
 ]);
 const readingPaths = clustersWithPosts(posts);
@@ -45,37 +46,41 @@ const readingPaths = clustersWithPosts(posts);
         </a>
       </div>
 
-      <section class="paths" aria-labelledby="paths-title">
-        <div class="paths__head">
-          <p class="eyebrow">{t.contentHub.blog.pathsEyebrow}</p>
-          <h2 id="paths-title" class="h3">
-            {t.contentHub.blog.pathsTitle}
-          </h2>
-        </div>
+      {locale === 'en' && (
+        <section class="paths" aria-labelledby="paths-title">
+          <div class="paths__head">
+            <p class="eyebrow">{t.contentHub.blog.pathsEyebrow}</p>
+            <h2 id="paths-title" class="h3">
+              {t.contentHub.blog.pathsTitle}
+            </h2>
+          </div>
 
-        <div class="paths__grid">
-          {readingPaths.map((path) => (
-            <section class="path">
-              <h3 class="path__title">{path.title}</h3>
-              <p class="path__lede">{path.lede}</p>
-              <ul class="path__list">
-                {path.posts.map((post) => (
-                  <li>
-                    <a href={localePath(locale, `blog/${post.id}`)}>{post.data.title}</a>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))}
-        </div>
-      </section>
+          <div class="paths__grid">
+            {readingPaths.map((path) => (
+              <section class="path">
+                <h3 class="path__title">{path.title}</h3>
+                <p class="path__lede">{path.lede}</p>
+                <ul class="path__list">
+                  {path.posts.map((post) => (
+                    <li>
+                      <a href={localePath(locale, `blog/${getPostSlug(post)}`)}>
+                        {post.data.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
+        </section>
+      )}
 
       <ul class="posts">
         {entries.map((entry) => (
           <li class="post">
             <a href={entry.href} class="post__link">
               <time class="post__date mono" datetime={entry.date.toISOString()}>
-                {formatPostDate(entry.date)}
+                {formatPostDate(entry.date, 'short', locale)}
               </time>
               <h2 class="post__title">{entry.title}</h2>
               <p class="post__sum">{entry.summary}</p>

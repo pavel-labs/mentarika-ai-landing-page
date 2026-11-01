@@ -254,6 +254,7 @@ export interface Dict {
       primary: string;
       pathsEyebrow: string;
       pathsTitle: string;
+      relatedReading: string;
     };
   };
 

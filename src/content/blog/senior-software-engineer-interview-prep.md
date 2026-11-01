@@ -1,6 +1,7 @@
 ---
 title: 'Senior software engineer interview prep: what changes at this level'
 date: 2026-05-19
+locale: en
 summary: 'Senior interviews are not just harder junior interviews. The signal shifts toward judgment, trade-offs, and how you operate in messy systems.'
 ---
 

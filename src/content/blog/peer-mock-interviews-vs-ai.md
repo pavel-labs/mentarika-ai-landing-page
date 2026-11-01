@@ -1,6 +1,7 @@
 ---
 title: 'Peer mock interviews vs. AI mock interviews'
 date: 2026-05-19
+locale: en
 summary: 'Peer mocks bring realism and human judgment. AI mocks bring availability, repetition, and consistency. The useful question is when to use each.'
 ---
 

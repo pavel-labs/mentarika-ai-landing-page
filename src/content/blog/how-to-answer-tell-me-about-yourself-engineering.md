@@ -1,6 +1,7 @@
 ---
 title: 'How to answer “Tell me about yourself” as a software engineer'
 date: 2026-05-19
+locale: en
 summary: 'Most answers are either a resume dump or an awkward autobiography. The useful version is a tight framing of who you are as an engineer.'
 ---
 

@@ -512,6 +512,7 @@ export const de: Dict = {
       primary: 'Zum Blog',
       pathsEyebrow: 'Lesepfade',
       pathsTitle: 'Gruppiert danach, worauf du dich vorbereitest.',
+      relatedReading: 'Weiterführende Artikel',
     },
   },
 

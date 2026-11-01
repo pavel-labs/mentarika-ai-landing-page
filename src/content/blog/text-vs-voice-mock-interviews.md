@@ -1,6 +1,7 @@
 ---
 title: 'Text vs. voice mock interviews: which one should you practice with?'
 date: 2026-05-19
+locale: en
 summary: 'Text is easier to start. Voice is closer to the room. Strong interview prep usually uses both modes for different jobs.'
 ---
 

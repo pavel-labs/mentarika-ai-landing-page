@@ -1,6 +1,7 @@
 ---
 title: "AI skills practice for developers, QA engineers and business consultants"
 date: 2026-10-28
+locale: en
 summary: "Build a repeatable AI tutor practice routine with realistic software, testing and business scenarios, clear assessment criteria and evidence-based reflection."
 ---
 

@@ -1,14 +1,19 @@
 ---
 import { render } from 'astro:content';
 import type { Locale } from '../../i18n/index';
-import { DEFAULT_LOCALE, localePath, localeHome, resolveNavHref } from '../../i18n/index';
+import { getDict, localePath, localeHome, resolveNavHref } from '../../i18n/index';
 import { SITE } from '../../consts';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import '../../styles/reading.css';
 import Nav from '../../components/shared/Nav.astro';
 import Footer from '../../components/shared/Footer.astro';
 import { findClusterBySlug } from '../../content/blog-clusters';
-import { getPublishedPosts, formatPostDate, type BlogPost } from '../../content/blog';
+import {
+  getPublishedPosts,
+  getPostSlug,
+  formatPostDate,
+  type BlogPost,
+} from '../../content/blog';
 
 interface Props {
   locale: Locale;
@@ -16,32 +21,40 @@ interface Props {
 }
 const { locale, post } = Astro.props;
 const { Content } = await render(post);
-const cluster = findClusterBySlug(post.id);
-const publishedPosts = await getPublishedPosts();
+const t = getDict(locale);
+const blogLabel = t.nav.find((link) => link.href === '/blog')?.label ?? 'Blog';
+const postSlug = getPostSlug(post);
+const cluster = findClusterBySlug(postSlug);
+const publishedPosts = await getPublishedPosts(locale);
 const relatedPosts =
   cluster == null
     ? []
     : publishedPosts
-        .filter((candidate) => cluster.slugs.includes(candidate.id) && candidate.id !== post.id)
-        .sort((a, b) => cluster.slugs.indexOf(a.id) - cluster.slugs.indexOf(b.id))
+        .filter(
+          (candidate) =>
+            cluster.slugs.includes(getPostSlug(candidate)) &&
+            getPostSlug(candidate) !== postSlug,
+        )
+        .sort(
+          (a, b) =>
+            cluster.slugs.indexOf(getPostSlug(a)) - cluster.slugs.indexOf(getPostSlug(b)),
+        )
         .slice(0, 4);
-const clusterCta = cluster?.cta ?? null;
-const fmt = formatPostDate(post.data.date, 'long');
+const clusterCta = locale === 'en' ? (cluster?.cta ?? null) : null;
+const fmt = formatPostDate(post.data.date, 'long', locale);
 // Cluster CTAs point at site routes ('/enterprise#contact', '/#waitlist'); resolve them
 // under the reader's locale so a Russian reader lands on the Russian page.
 const ctaHref = (href: string) => resolveNavHref(locale, '#main', href);
 
-// Posts are English-only: the canonical is the English URL (see BaseLayout
-// `singleLanguage`), so the structured data names that URL too.
 const origin = Astro.site ?? new URL(SITE.domain);
-const postUrl = new URL(localePath(DEFAULT_LOCALE, `blog/${post.id}`), origin).href;
+const postUrl = new URL(localePath(locale, `blog/${postSlug}`), origin).href;
 const jsonLd = [
   {
     '@type': 'BlogPosting',
     headline: post.data.title,
     description: post.data.summary,
     datePublished: post.data.date.toISOString(),
-    inLanguage: 'en',
+    inLanguage: locale,
     mainEntityOfPage: postUrl,
     url: postUrl,
     author: { '@id': `${origin.origin}/#org` },
@@ -54,13 +67,13 @@ const jsonLd = [
         '@type': 'ListItem',
         position: 1,
         name: SITE.name,
-        item: new URL(localePath(DEFAULT_LOCALE, ''), origin).href,
+        item: new URL(localeHome(locale), origin).href,
       },
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Blog',
-        item: new URL(localePath(DEFAULT_LOCALE, 'blog'), origin).href,
+        name: blogLabel,
+        item: new URL(localePath(locale, 'blog'), origin).href,
       },
       { '@type': 'ListItem', position: 3, name: post.data.title, item: postUrl },
     ],
@@ -73,7 +86,6 @@ const jsonLd = [
   title={`${post.data.title} – Mentarika`}
   description={post.data.summary}
   ogType="article"
-  singleLanguage
   jsonLd={jsonLd}
 >
   <Nav locale={locale} homeHref={localeHome(locale)} />
@@ -81,7 +93,7 @@ const jsonLd = [
     <article class="reading-shell post__inner">
       <header class="reading-header">
         <a class="post__back" href={localePath(locale, 'blog')}>
-          ← Blog
+          ← {blogLabel}
         </a>
         <time class="post__date mono" datetime={post.data.date.toISOString()}>
           {fmt}
@@ -94,12 +106,14 @@ const jsonLd = [
       </div>
       {relatedPosts.length > 0 && (
         <aside class="related reading-body">
-          <p class="related__eyebrow mono">Related reading</p>
-          <h2 class="related__title">{cluster?.title}</h2>
+          <p class="related__eyebrow mono">{t.contentHub.blog.relatedReading}</p>
+          {locale === 'en' && <h2 class="related__title">{cluster?.title}</h2>}
           <ul class="related__list">
             {relatedPosts.map((relatedPost) => (
               <li>
-                <a href={localePath(locale, `blog/${relatedPost.id}`)}>{relatedPost.data.title}</a>
+                <a href={localePath(locale, `blog/${getPostSlug(relatedPost)}`)}>
+                  {relatedPost.data.title}
+                </a>
               </li>
             ))}
           </ul>

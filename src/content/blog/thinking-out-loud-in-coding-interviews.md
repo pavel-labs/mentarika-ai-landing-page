@@ -1,6 +1,7 @@
 ---
 title: 'Thinking out loud in coding interviews without talking yourself into a corner'
 date: 2026-09-02
+locale: en
 summary: 'Interviewers score the reasoning they can hear. Here is how to narrate a solution so it helps you instead of burying you.'
 ---
 

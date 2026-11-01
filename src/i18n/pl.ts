@@ -513,6 +513,7 @@ export const pl: Dict = {
       primary: 'Odwiedź blog',
       pathsEyebrow: 'Ścieżki lektur',
       pathsTitle: 'Pogrupowane według tego, do czego się przygotowujesz.',
+      relatedReading: 'Powiązane artykuły',
     },
   },
 

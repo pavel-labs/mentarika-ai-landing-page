@@ -72,7 +72,7 @@ src/
   consts.ts             # non-translatable constants only
   icon-version.ts       # content hash used to cache-bust generated app icons
   legal.ts              # DRAFT privacy/terms clauses (English authoritative)
-  content.config.ts · content/blog/*.md   # editorial posts (English)
+  content.config.ts · content/blog/*.md   # English originals + locale-specific translations
   layouts/BaseLayout    # <head>, SEO/OG/JSON-LD/hreflang/RSS, fonts, global.css
   components/   # Landing = Hero, Proof, WhyPractice, InterviewSection,
                 #   AssessmentSection, ReportSection, ProgressSection, Pricing,
@@ -110,12 +110,13 @@ browser and app icons.
   **English** (`src/legal.ts`) with "English is authoritative" stated – auto-translated
   binding legal text is a liability. Bump `LEGAL_EFFECTIVE_DATE` / `LEGAL_CONTACT` there.
   **These are unreviewed drafts – have counsel review before launch.**
-- **Blog**: one editorial archive at `/{locale}/blog` combines English editorial posts
-  (`src/content/blog/*.md`) with localized CMS articles; article detail URLs remain
-  `/{locale}/articles/<slug>` for compatibility. The old `/articles` archive redirects to
-  the matching blog page. English posts are served under every locale prefix for localized
-  chrome, canonicalize to their English URL (`BaseLayout singleLanguage`), and are left out
-  of the sitemap. Posts carry `BlogPosting` + `BreadcrumbList` JSON-LD.
+- **Blog**: one editorial archive at `/{locale}/blog` combines localized Markdown posts
+  (`src/content/blog/*.md` in English and `src/content/blog/{de,es,ru,pl}/*.md`) with
+  localized CMS articles; article detail URLs remain `/{locale}/articles/<slug>` for
+  compatibility. The old `/articles` archive redirects to the matching blog page. English
+  originals and translations have separate localized URLs. Translated posts use the same
+  slug in each locale, with locale-specific canonical and hreflang metadata; all translations
+  appear in the sitemap. Posts carry `BlogPosting` + `BreadcrumbList` JSON-LD.
 - **Language redirect** (`LocaleAuto.astro`): only the root home `/` sends a first-time
   visitor to their browser's language. An explicit `/de/`, `/ru/`, … URL is never overridden
   by browser language (a shared link or a search result already chose it, and crawlers

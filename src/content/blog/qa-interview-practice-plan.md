@@ -1,6 +1,7 @@
 ---
 title: "QA interview practice: a realistic 30-minute plan"
 date: 2026-10-27
+locale: en
 summary: "Practice test design, API investigation, defect reporting and automation judgment with one concrete scenario and an evidence-based review."
 ---
 

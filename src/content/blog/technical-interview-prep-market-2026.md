@@ -1,6 +1,7 @@
 ---
 title: 'The technical interview prep market in 2026: what changed, and what it means for how you prepare'
 date: 2026-09-28
+locale: en
 summary: 'Fewer entry-level seats, AI in every workflow, a surge in assessment cheating, and employers splitting between in-person rounds and AI-allowed interviews. A sourced look at the market and what it rewards now.'
 ---
 

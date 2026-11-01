@@ -1,6 +1,7 @@
 ---
 title: 'Staff engineer interview preparation'
 date: 2026-05-19
+locale: en
 summary: 'Staff interviews test leverage, architecture, influence, and clarity under ambiguity. Preparing for them like a coding screen is usually a category error.'
 ---
 

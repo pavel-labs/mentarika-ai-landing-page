@@ -1,6 +1,7 @@
 ---
 title: 'How to practice system design interviews when you are alone'
 date: 2026-05-19
+locale: en
 summary: 'Solo system design prep breaks when nobody pushes on scope, trade-offs, or failure modes. The fix is a more adversarial practice loop.'
 ---
 

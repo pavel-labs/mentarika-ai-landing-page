@@ -512,6 +512,7 @@ export const en: Dict = {
       primary: 'Visit the blog',
       pathsEyebrow: 'Reading paths',
       pathsTitle: 'Grouped by what you are preparing for.',
+      relatedReading: 'Related reading',
     },
   },
 

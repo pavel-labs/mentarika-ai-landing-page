@@ -1,6 +1,7 @@
 ---
 title: 'System design interviews vs. coding interviews: why your prep should look different'
 date: 2026-05-19
+locale: en
 summary: 'Candidates often use the same prep style for both interview types. That usually leaves one of them undertrained.'
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: 'Building Mentarika: the road to 2026'
 date: 2026-05-18
+locale: en
 summary: 'Why we are building an AI interviewer that pushes back, and what ships at launch.'
 ---
 

@@ -513,6 +513,7 @@ export const ru: Dict = {
       primary: 'Перейти в блог',
       pathsEyebrow: 'Маршруты чтения',
       pathsTitle: 'Сгруппировано по тому, к чему ты готовишься.',
+      relatedReading: 'Читайте также',
     },
   },
 

@@ -13,7 +13,7 @@ const homes = Object.fromEntries(LOCALES.map((l) => [l, localeHome(l)]));
 {/*
   Sends a first-time visitor to the home page in their browser's language. Rendered on
   locale home pages only (BaseLayout's `autoLocale` prop) – deep links keep the language
-  they were shared in, which matters because the blog is English-only by design.
+  they were shared in, so localized blog links stay in the language selected by the author.
 
   Browser language is consulted only on the default-locale home (`/`, the x-default).
   An explicit /de/, /ru/, … URL is a choice already made – by the person who shared the

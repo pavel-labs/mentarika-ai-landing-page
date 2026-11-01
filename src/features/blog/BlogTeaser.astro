@@ -32,7 +32,7 @@ const entries = (await getEditorialEntries(locale)).slice(0, 4);
         <article class="journal__card">
           <a href={entry.href} class="journal__link">
             <time class="journal__date mono" datetime={entry.date.toISOString()}>
-              {formatPostDate(entry.date)}
+              {formatPostDate(entry.date, 'short', locale)}
             </time>
             <h3 class="journal__title">{entry.title}</h3>
             <p class="journal__summary">{entry.summary}</p>

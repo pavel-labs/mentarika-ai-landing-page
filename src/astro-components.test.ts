@@ -1,7 +1,7 @@
 import { experimental_AstroContainer as AstroContainer } from 'astro/container';
-import { getCollection } from 'astro:content';
 import { beforeAll, describe, expect, it } from 'vitest';
 import { defaultLanding } from './marketing/content';
+import type { BlogPost } from './content/blog';
 
 type AstroComponent = Parameters<
   Awaited<ReturnType<typeof AstroContainer.create>>['renderToString']
@@ -50,14 +50,26 @@ const props = {
   compact: true,
 };
 
+const blogPost = {
+  id: 'component-test',
+  collection: 'blog',
+  data: {
+    title: 'Blog component test',
+    date: new Date('2026-01-15T00:00:00.000Z'),
+    summary: 'A sample post for server-render tests.',
+    locale: 'en',
+    draft: false,
+  },
+  rendered: {
+    html: '<p>Component test article body.</p>',
+    metadata: { imagePaths: [] },
+  },
+} satisfies BlogPost;
+
 let container: Awaited<ReturnType<typeof AstroContainer.create>>;
-let blogPost: Awaited<ReturnType<typeof getCollection<'blog'>>>[number];
 
 beforeAll(async () => {
   container = await AstroContainer.create();
-  const [firstPost] = await getCollection('blog', ({ data }) => !data.draft);
-  if (!firstPost) throw new Error('Astro component tests require a published blog post.');
-  blogPost = firstPost;
 });
 
 describe('Astro component server rendering', () => {

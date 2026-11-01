@@ -13,13 +13,19 @@ export interface EditorialEntry {
   summary: string;
 }
 
-export async function getPublishedPosts(): Promise<BlogPost[]> {
+export function getPostSlug(post: BlogPost): string {
+  return post.id.slice(post.id.lastIndexOf('/') + 1);
+}
+
+export async function getPublishedPosts(locale?: Locale): Promise<BlogPost[]> {
   const posts = await getCollection('blog', (p) => !p.data.draft);
-  return posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  return posts
+    .filter((post) => locale == null || post.data.locale === locale)
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 }
 
 export async function getEditorialEntries(locale: Locale): Promise<EditorialEntry[]> {
-  const posts = await getPublishedPosts();
+  const posts = await getPublishedPosts(locale);
   return mergeEditorialEntries(posts, publishedArticles(locale), locale);
 }
 
@@ -34,7 +40,7 @@ export function mergeEditorialEntries(
   const entries = [
     ...posts.map((post) => ({
       date: post.data.date,
-      href: localePath(locale, `blog/${post.id}`),
+      href: localePath(locale, `blog/${getPostSlug(post)}`),
       title: post.data.title,
       summary: post.data.summary,
     })),
@@ -48,12 +54,23 @@ export function mergeEditorialEntries(
   return entries.sort((a, b) => b.date.getTime() - a.date.getTime());
 }
 
-export function formatPostDate(date: Date, month: 'short' | 'long' = 'short'): string {
-  return date.toLocaleDateString('en-US', { year: 'numeric', month, day: 'numeric' });
+export function formatPostDate(
+  date: Date,
+  month: 'short' | 'long' = 'short',
+  locale: Locale = 'en',
+): string {
+  const dateLocales: Record<Locale, string> = {
+    en: 'en-US',
+    de: 'de-DE',
+    es: 'es-ES',
+    ru: 'ru-RU',
+    pl: 'pl-PL',
+  };
+  return date.toLocaleDateString(dateLocales[locale], { year: 'numeric', month, day: 'numeric' });
 }
 
 export function postsForSlugs(posts: BlogPost[], slugs: readonly string[]): BlogPost[] {
-  const postById = new Map(posts.map((post) => [post.id, post] as const));
+  const postById = new Map(posts.map((post) => [getPostSlug(post), post] as const));
   return slugs.map((slug) => postById.get(slug)).filter((p): p is BlogPost => p != null);
 }
 

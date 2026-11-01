@@ -1,6 +1,7 @@
 ---
 title: 'Human interview coach vs. AI interview practice'
 date: 2026-05-19
+locale: en
 summary: 'A strong human coach can accelerate judgment fast. AI practice can give you the repetition and pressure loop most people can actually sustain.'
 ---
 
