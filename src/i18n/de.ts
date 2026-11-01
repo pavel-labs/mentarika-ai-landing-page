@@ -513,6 +513,63 @@ export const de: Dict = {
       pathsEyebrow: 'Lesepfade',
       pathsTitle: 'Gruppiert danach, worauf du dich vorbereitest.',
       relatedReading: 'Weiterführende Artikel',
+      clusters: {
+        compare: {
+          title: 'Vergleichsseiten',
+          lede: 'Für alle, die Methoden, Formate und Tools zur Interview-Vorbereitung vergleichen.',
+          cta: {
+            eyebrow: 'So passt Mentarika dazu',
+            title: 'Vom Vergleich der Vorbereitungstools zum Üben unter Druck.',
+            body: 'Wenn dir realistische Interviewpraxis statt weiterer Inhalte fehlt, wird Mentarika genau für diesen Schritt entwickelt.',
+            primaryLabel: 'Infos zum Start',
+            secondaryLabel: 'Vergleiche ansehen',
+          },
+        },
+        'system-design': {
+          title: 'System Design und technische Runden',
+          lede: 'Für Kandidat:innen, die gezieltes technisches Üben statt einer zufälligen Menge an Fragen brauchen.',
+          cta: {
+            eyebrow: 'Das Gespräch üben',
+            title: 'Mach aus der Vorbereitung allein ein technisches Gespräch, das du sicher führen kannst.',
+            body: 'Mentarika richtet sich an Kandidat:innen, die realistische Rückfragen brauchen – nicht nur weitere Aufgaben oder Musterlösungen.',
+            primaryLabel: 'Zugang zum Start',
+            secondaryLabel: 'Alle Ressourcen ansehen',
+          },
+        },
+        behavioral: {
+          title: 'Verhaltensinterviews und Positionierung',
+          lede: 'Für Kandidat:innen, die klarer kommunizieren und nicht nur bessere Lösungen präsentieren möchten.',
+          cta: {
+            eyebrow: 'Klarer kommunizieren',
+            title: 'Übe Antworten, bis sie klar und nicht auswendig gelernt klingen.',
+            body: 'Eine gute Übung prüft Aufbau, Eigenverantwortung und Antworten auf Rückfragen, bevor das echte Interview beginnt.',
+            primaryLabel: 'Infos zum Start',
+            secondaryLabel: 'Ressourcen ansehen',
+          },
+        },
+        senior: {
+          title: 'Vorbereitung auf Senior- und Staff-Rollen',
+          lede: 'Für Engineers, die sich auf Interviews vorbereiten, in denen Urteilsvermögen und Wirkung zählen.',
+          cta: {
+            eyebrow: 'Für Interviews mit hohen Anforderungen',
+            title: 'Bereite dich auf Interviews mit schwierigen Abwägungen vor, nicht nur auf härtere Coding-Aufgaben.',
+            body: 'Mit Mentarika lassen sich Abwägungen, Kommunikation und Ruhe schon beim Üben sichtbar machen – besonders wichtig für Senior- und Staff-Rollen.',
+            primaryLabel: 'Zugang zum Start',
+            secondaryLabel: 'Weitere Strategien lesen',
+          },
+        },
+        teams: {
+          title: 'Für Engineering-Teams',
+          lede: 'Für Engineering-Leitungen und Recruiting-Teams, die Interviewtraining oder erste Auswahlrunden im Team organisieren.',
+          cta: {
+            eyebrow: 'Mentarika für Teams',
+            title: 'Einheitliches Interviewtraining und Vorauswahl – ohne Überwachung.',
+            body: 'Interviews mit eurem Tech-Stack, Aufgaben für Kandidat:innen mit deren Zustimmung und Teamberichte auf Basis aggregierter Daten – niemals einzelne Transkripte.',
+            primaryLabel: 'Kontakt aufnehmen',
+            secondaryLabel: 'Mentarika für Teams ansehen',
+          },
+        },
+      },
     },
   },
 

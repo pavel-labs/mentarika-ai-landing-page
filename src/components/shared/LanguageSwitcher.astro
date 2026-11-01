@@ -96,6 +96,9 @@ const { locale } = Astro.props;
     background: var(--surface-raised);
     box-shadow: 0 16px 40px #18201918;
   }
+  .lang:not([open]) > .lang__panel {
+    display: none;
+  }
   .lang a {
     display: flex;
     align-items: center;

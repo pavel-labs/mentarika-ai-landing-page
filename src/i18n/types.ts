@@ -39,6 +39,8 @@ export interface Faq {
   a: string;
 }
 
+export type BlogClusterId = 'compare' | 'system-design' | 'behavioral' | 'senior' | 'teams';
+
 export interface Dict {
   /** Native language name shown in the switcher. */
   langName: string;
@@ -255,6 +257,20 @@ export interface Dict {
       pathsEyebrow: string;
       pathsTitle: string;
       relatedReading: string;
+      clusters: Record<
+        BlogClusterId,
+        {
+          title: string;
+          lede: string;
+          cta: {
+            eyebrow: string;
+            title: string;
+            body: string;
+            primaryLabel: string;
+            secondaryLabel: string;
+          };
+        }
+      >;
     };
   };
 

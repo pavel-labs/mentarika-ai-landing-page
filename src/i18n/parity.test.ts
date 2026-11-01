@@ -62,4 +62,15 @@ describe('translation parity (vs English reference)', () => {
     expect(d.hero.lede).not.toBe(en.hero.lede);
     expect(d.faq.items[0]?.q).not.toBe(en.faq.items[0]?.q);
   });
+
+  it.each(TRANSLATED)('%s localizes all blog cluster copy', (locale) => {
+    const localized = getDict(locale).contentHub.blog.clusters;
+    for (const id of Object.keys(en.contentHub.blog.clusters) as Array<
+      keyof typeof en.contentHub.blog.clusters
+    >) {
+      expect(localized[id].title).not.toBe(en.contentHub.blog.clusters[id].title);
+      expect(localized[id].lede).not.toBe(en.contentHub.blog.clusters[id].lede);
+      expect(localized[id].cta.body).not.toBe(en.contentHub.blog.clusters[id].cta.body);
+    }
+  });
 });

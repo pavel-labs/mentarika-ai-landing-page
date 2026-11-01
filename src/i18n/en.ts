@@ -513,6 +513,63 @@ export const en: Dict = {
       pathsEyebrow: 'Reading paths',
       pathsTitle: 'Grouped by what you are preparing for.',
       relatedReading: 'Related reading',
+      clusters: {
+        compare: {
+          title: 'Comparison pages',
+          lede: 'For readers comparing interview-prep methods, formats, and tools.',
+          cta: {
+            eyebrow: 'Where Mentarika fits',
+            title: 'Move from comparing prep tools to practicing under pressure.',
+            body: 'If you need realistic interview practice rather than more content, Mentarika is being built for that step.',
+            primaryLabel: 'Launch details',
+            secondaryLabel: 'Browse comparison pages',
+          },
+        },
+        'system-design': {
+          title: 'System design and technical rounds',
+          lede: 'For candidates who need focused technical practice, not a random volume of questions.',
+          cta: {
+            eyebrow: 'Practice the conversation',
+            title: 'Turn solo preparation into a technical conversation you can defend.',
+            body: 'Mentarika is for candidates who need realistic follow-up questions, not just another set of prompts or solved examples.',
+            primaryLabel: 'Get launch access',
+            secondaryLabel: 'Browse all resources',
+          },
+        },
+        behavioral: {
+          title: 'Behavioral interviews and positioning',
+          lede: 'For candidates who want to communicate more clearly, not just present stronger solutions.',
+          cta: {
+            eyebrow: 'Clearer communication',
+            title: 'Practice answers until they sound clear, not rehearsed.',
+            body: 'A useful practice loop tests structure, ownership, and follow-up answers before the real interview.',
+            primaryLabel: 'Launch details',
+            secondaryLabel: 'Browse resources',
+          },
+        },
+        senior: {
+          title: 'Senior and staff preparation',
+          lede: 'For engineers preparing for interviews where judgment and impact matter most.',
+          cta: {
+            eyebrow: 'For higher-stakes interviews',
+            title: 'Prepare for judgment-heavy interviews, not just harder coding screens.',
+            body: 'Mentarika helps make trade-offs, communication, and composure visible in practice, which matters in senior and staff interviews.',
+            primaryLabel: 'Get launch access',
+            secondaryLabel: 'Read more strategies',
+          },
+        },
+        teams: {
+          title: 'For engineering teams',
+          lede: 'For engineering leaders and recruiters running interview practice or first-round screening across a team.',
+          cta: {
+            eyebrow: 'Mentarika for teams',
+            title: 'Consistent interview practice and screening, without surveillance.',
+            body: 'Company interviews on your stack, candidate assignments with consent, and team reports based on aggregates — never individual transcripts.',
+            primaryLabel: 'Talk to us',
+            secondaryLabel: 'See Mentarika for teams',
+          },
+        },
+      },
     },
   },
 

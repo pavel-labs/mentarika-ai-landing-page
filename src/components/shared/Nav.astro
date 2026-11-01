@@ -183,6 +183,9 @@ const eventFor = (href: string) =>
     border-bottom: 1px solid var(--line-strong);
     box-shadow: 0 24px 32px -24px #18201930;
   }
+  .menu:not([open]) > .menu__panel {
+    display: none;
+  }
   .menu__panel nav {
     display: grid;
     gap: 0.3rem;

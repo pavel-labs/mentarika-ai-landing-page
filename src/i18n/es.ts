@@ -514,6 +514,63 @@ export const es: Dict = {
       pathsEyebrow: 'Rutas de lectura',
       pathsTitle: 'Agrupados según lo que estás preparando.',
       relatedReading: 'Lecturas relacionadas',
+      clusters: {
+        compare: {
+          title: 'Páginas comparativas',
+          lede: 'Para quienes comparan métodos, formatos y herramientas de preparación para entrevistas.',
+          cta: {
+            eyebrow: 'Qué aporta Mentarika',
+            title: 'Pasa de comparar herramientas a practicar bajo presión.',
+            body: 'Si necesitas practicar entrevistas de forma realista en vez de leer más contenido, Mentarika se está creando para dar ese paso.',
+            primaryLabel: 'Detalles del lanzamiento',
+            secondaryLabel: 'Ver comparativas',
+          },
+        },
+        'system-design': {
+          title: 'System design y rondas técnicas',
+          lede: 'Para quienes necesitan práctica técnica enfocada, no acumular preguntas al azar.',
+          cta: {
+            eyebrow: 'Practica la conversación',
+            title: 'Convierte la preparación en solitario en una conversación técnica que puedas defender.',
+            body: 'Mentarika está pensado para quienes necesitan preguntas de seguimiento realistas, no solo más ejercicios o soluciones resueltas.',
+            primaryLabel: 'Acceso al lanzamiento',
+            secondaryLabel: 'Ver todos los recursos',
+          },
+        },
+        behavioral: {
+          title: 'Entrevistas conductuales y perfil profesional',
+          lede: 'Para quienes quieren comunicar con más claridad, no solo presentar mejores soluciones.',
+          cta: {
+            eyebrow: 'Comunicación más clara',
+            title: 'Practica tus respuestas hasta que suenen claras y naturales.',
+            body: 'Una buena rutina de práctica pone a prueba la estructura, la responsabilidad y las respuestas a preguntas de seguimiento antes de la entrevista real.',
+            primaryLabel: 'Detalles del lanzamiento',
+            secondaryLabel: 'Ver recursos',
+          },
+        },
+        senior: {
+          title: 'Preparación para puestos senior y staff',
+          lede: 'Para ingenieros que preparan entrevistas donde el criterio y el impacto son lo más importante.',
+          cta: {
+            eyebrow: 'Para entrevistas de mayor exigencia',
+            title: 'Prepárate para entrevistas que exigen criterio, no solo para ejercicios de código más difíciles.',
+            body: 'Mentarika ayuda a hacer visibles desde la práctica las decisiones, la comunicación y la serenidad, aspectos clave en entrevistas senior y staff.',
+            primaryLabel: 'Acceso al lanzamiento',
+            secondaryLabel: 'Leer más estrategias',
+          },
+        },
+        teams: {
+          title: 'Para equipos de ingeniería',
+          lede: 'Para responsables de ingeniería y selección que organizan prácticas o primeras rondas para todo un equipo.',
+          cta: {
+            eyebrow: 'Mentarika para equipos',
+            title: 'Práctica y selección coherentes, sin vigilancia.',
+            body: 'Entrevistas con la tecnología del equipo, pruebas para candidatos con su consentimiento e informes agregados del equipo; nunca transcripciones individuales.',
+            primaryLabel: 'Contactar',
+            secondaryLabel: 'Ver Mentarika para equipos',
+          },
+        },
+      },
     },
   },
 

@@ -514,6 +514,63 @@ export const pl: Dict = {
       pathsEyebrow: 'Ścieżki lektur',
       pathsTitle: 'Pogrupowane według tego, do czego się przygotowujesz.',
       relatedReading: 'Powiązane artykuły',
+      clusters: {
+        compare: {
+          title: 'Strony porównawcze',
+          lede: 'Dla osób porównujących metody, formaty i narzędzia przygotowań do rozmów.',
+          cta: {
+            eyebrow: 'Gdzie pasuje Mentarika',
+            title: 'Zamiast porównywać narzędzia, zacznij ćwiczyć pod presją.',
+            body: 'Jeśli potrzebujesz realistycznej praktyki rozmów zamiast kolejnych materiałów, Mentarika powstaje właśnie z myślą o tym kroku.',
+            primaryLabel: 'Informacje o starcie',
+            secondaryLabel: 'Zobacz porównania',
+          },
+        },
+        'system-design': {
+          title: 'System design i rundy techniczne',
+          lede: 'Dla kandydatów, którzy potrzebują ukierunkowanej praktyki technicznej, a nie przypadkowej puli pytań.',
+          cta: {
+            eyebrow: 'Ćwicz rozmowę',
+            title: 'Zamień samodzielne przygotowania w techniczną rozmowę, której możesz bronić.',
+            body: 'Mentarika jest dla kandydatów, którzy potrzebują realistycznych pytań uzupełniających, a nie kolejnych zadań i gotowych rozwiązań.',
+            primaryLabel: 'Dostęp na start',
+            secondaryLabel: 'Zobacz wszystkie materiały',
+          },
+        },
+        behavioral: {
+          title: 'Rozmowy behawioralne i autoprezentacja',
+          lede: 'Dla kandydatów, którzy chcą lepiej się komunikować, a nie tylko przedstawiać mocniejsze rozwiązania.',
+          cta: {
+            eyebrow: 'Jaśniejsza komunikacja',
+            title: 'Ćwicz odpowiedzi, aż będą brzmiały jasno i naturalnie.',
+            body: 'Dobra praktyka sprawdza strukturę, odpowiedzialność i reakcje na pytania uzupełniające, zanim zacznie się prawdziwa rozmowa.',
+            primaryLabel: 'Informacje o starcie',
+            secondaryLabel: 'Przeglądaj materiały',
+          },
+        },
+        senior: {
+          title: 'Przygotowanie na stanowiska senior i staff',
+          lede: 'Dla inżynierów przygotowujących się do rozmów, w których liczą się osąd i wpływ.',
+          cta: {
+            eyebrow: 'Na rozmowy o większej stawce',
+            title: 'Przygotuj się na rozmowy wymagające osądu, nie tylko trudniejsze zadania programistyczne.',
+            body: 'Mentarika pomaga wcześniej ćwiczyć podejmowanie decyzji, komunikację i zachowanie spokoju — umiejętności ważne na stanowiskach senior i staff.',
+            primaryLabel: 'Dostęp na start',
+            secondaryLabel: 'Więcej strategii',
+          },
+        },
+        teams: {
+          title: 'Dla zespołów inżynierskich',
+          lede: 'Dla liderów technicznych i rekruterów organizujących ćwiczenia lub pierwsze rundy rozmów dla zespołu.',
+          cta: {
+            eyebrow: 'Mentarika dla zespołów',
+            title: 'Spójna praktyka rozmów i selekcja bez nadzoru.',
+            body: 'Rozmowy oparte na waszym stosie technologicznym, zadania dla kandydatów za ich zgodą i raporty zespołowe z danych zbiorczych — nigdy z indywidualnych transkrypcji.',
+            primaryLabel: 'Porozmawiaj z nami',
+            secondaryLabel: 'Poznaj Mentarikę dla zespołów',
+          },
+        },
+      },
     },
   },
 

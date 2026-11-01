@@ -1,15 +1,10 @@
+import type { BlogClusterId } from '../i18n/types';
+
 export interface BlogClusterDefinition {
-  id: 'compare' | 'system-design' | 'behavioral' | 'senior' | 'teams';
-  title: string;
-  lede: string;
+  id: BlogClusterId;
   cta: {
-    eyebrow: string;
-    title: string;
-    body: string;
-    primaryLabel: string;
     primaryHref: string;
-    secondaryLabel?: string;
-    secondaryHref?: string;
+    secondaryHref: string;
   };
   slugs: string[];
 }
@@ -17,15 +12,8 @@ export interface BlogClusterDefinition {
 export const BLOG_CLUSTERS: BlogClusterDefinition[] = [
   {
     id: 'compare',
-    title: 'Comparison Pages',
-    lede: 'For high-intent readers comparing prep methods, formats, and tool categories.',
     cta: {
-      eyebrow: 'Where Mentarika fits',
-      title: 'Move from comparing prep tools to practicing with pressure.',
-      body: 'If the gap is not more content but more realistic interview reps, Mentarika is being built for that exact jump.',
-      primaryLabel: 'Launch details',
       primaryHref: '/#waitlist',
-      secondaryLabel: 'Browse compare hub',
       secondaryHref: '/compare',
     },
     slugs: [
@@ -39,15 +27,8 @@ export const BLOG_CLUSTERS: BlogClusterDefinition[] = [
   },
   {
     id: 'system-design',
-    title: 'System Design and Technical Rounds',
-    lede: 'For candidates who need sharper technical loops than random practice question volume.',
     cta: {
-      eyebrow: 'Practice the room',
-      title: 'Turn solo prep into a defended technical conversation.',
-      body: 'Mentarika is aimed at candidates who need follow-up pressure, not just another pile of prompts or solved examples.',
-      primaryLabel: 'Get launch access',
       primaryHref: '/#waitlist',
-      secondaryLabel: 'See all resources',
       secondaryHref: '/resources',
     },
     slugs: [
@@ -59,15 +40,8 @@ export const BLOG_CLUSTERS: BlogClusterDefinition[] = [
   },
   {
     id: 'behavioral',
-    title: 'Behavioral and Positioning',
-    lede: 'For candidates who want stronger communication signal, not just stronger solutions.',
     cta: {
-      eyebrow: 'Sharper delivery',
-      title: 'Practice answers until they sound clear, not rehearsed.',
-      body: 'The right prep loop should pressure-test structure, ownership, and follow-up handling before the real interview does.',
-      primaryLabel: 'Launch details',
       primaryHref: '/#waitlist',
-      secondaryLabel: 'Browse resources',
       secondaryHref: '/resources',
     },
     slugs: [
@@ -77,30 +51,16 @@ export const BLOG_CLUSTERS: BlogClusterDefinition[] = [
   },
   {
     id: 'senior',
-    title: 'Senior and Staff Preparation',
-    lede: 'For engineers preparing beyond the mid-level loop, where judgment and leverage dominate.',
     cta: {
-      eyebrow: 'Built for higher-stakes loops',
-      title: 'Prepare for judgment-heavy interviews, not just harder coding screens.',
-      body: 'Mentarika is designed to make trade-offs, communication, and pressure visible earlier, which matters much more in senior and staff loops.',
-      primaryLabel: 'Get launch access',
       primaryHref: '/#waitlist',
-      secondaryLabel: 'Read more strategy',
       secondaryHref: '/resources',
     },
     slugs: ['senior-software-engineer-interview-prep', 'staff-engineer-interview-preparation'],
   },
   {
     id: 'teams',
-    title: 'For Engineering Teams',
-    lede: 'For engineering leaders and recruiters running interview practice or first-round screening across a team.',
     cta: {
-      eyebrow: 'Mentarika for teams',
-      title: 'Consistent interview practice and screening, without surveillance.',
-      body: 'Company interviews on your stack, candidate assignments with consent, and a team report built from aggregates – never individual transcripts.',
-      primaryLabel: 'Talk to us',
       primaryHref: '/enterprise#contact',
-      secondaryLabel: 'See Mentarika for teams',
       secondaryHref: '/enterprise',
     },
     slugs: [

@@ -40,7 +40,7 @@ const relatedPosts =
             cluster.slugs.indexOf(getPostSlug(a)) - cluster.slugs.indexOf(getPostSlug(b)),
         )
         .slice(0, 4);
-const clusterCta = locale === 'en' ? (cluster?.cta ?? null) : null;
+const clusterCopy = cluster ? t.contentHub.blog.clusters[cluster.id] : null;
 const fmt = formatPostDate(post.data.date, 'long', locale);
 // Cluster CTAs point at site routes ('/enterprise#contact', '/#waitlist'); resolve them
 // under the reader's locale so a Russian reader lands on the Russian page.
@@ -107,7 +107,7 @@ const jsonLd = [
       {relatedPosts.length > 0 && (
         <aside class="related reading-body">
           <p class="related__eyebrow mono">{t.contentHub.blog.relatedReading}</p>
-          {locale === 'en' && <h2 class="related__title">{cluster?.title}</h2>}
+          {clusterCopy && <h2 class="related__title">{clusterCopy.title}</h2>}
           <ul class="related__list">
             {relatedPosts.map((relatedPost) => (
               <li>
@@ -119,18 +119,21 @@ const jsonLd = [
           </ul>
         </aside>
       )}
-      {clusterCta != null && (
+      {cluster && clusterCopy && (
         <section class="article-cta reading-body">
-          <p class="article-cta__eyebrow">{clusterCta.eyebrow}</p>
-          <h2 class="article-cta__title">{clusterCta.title}</h2>
-          <p class="article-cta__body">{clusterCta.body}</p>
+          <p class="article-cta__eyebrow">{clusterCopy.cta.eyebrow}</p>
+          <h2 class="article-cta__title">{clusterCopy.cta.title}</h2>
+          <p class="article-cta__body">{clusterCopy.cta.body}</p>
           <div class="article-cta__actions">
-            <a class="article-cta__primary" href={ctaHref(clusterCta.primaryHref)}>
-              {clusterCta.primaryLabel}
+            <a class="article-cta__primary" href={ctaHref(cluster.cta.primaryHref)}>
+              {clusterCopy.cta.primaryLabel}
             </a>
-            {clusterCta.secondaryLabel && clusterCta.secondaryHref && (
-              <a class="article-cta__secondary" href={ctaHref(clusterCta.secondaryHref)}>
-                {clusterCta.secondaryLabel}
+            {clusterCopy.cta.secondaryLabel && cluster.cta.secondaryHref && (
+              <a
+                class="article-cta__secondary"
+                href={ctaHref(cluster.cta.secondaryHref)}
+              >
+                {clusterCopy.cta.secondaryLabel}
               </a>
             )}
           </div>

@@ -17,10 +17,10 @@ export function getPostSlug(post: BlogPost): string {
   return post.id.slice(post.id.lastIndexOf('/') + 1);
 }
 
-export async function getPublishedPosts(locale?: Locale): Promise<BlogPost[]> {
+export async function getPublishedPosts(locale: Locale): Promise<BlogPost[]> {
   const posts = await getCollection('blog', (p) => !p.data.draft);
   return posts
-    .filter((post) => locale == null || post.data.locale === locale)
+    .filter((post) => post.data.locale === locale)
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 }
 
