@@ -237,7 +237,7 @@ export const de: Dict = {
     eyebrow: 'Preise',
     heading: 'Kostenlos starten. Upgraden, wenn du aktiv auf Jobsuche bist.',
     flag: 'Für die aktive Jobsuche',
-    foot: 'Der Pro-Preis wird zum Start festgelegt und vor dem Bezahlen im App Store und im Web angezeigt.',
+    foot: 'Der Pro-Preis steht noch nicht fest.',
     tiers: [
       {
         tier: 'Free',
@@ -258,8 +258,8 @@ export const de: Dict = {
       },
       {
         tier: 'Pro',
-        price: 'TBA',
-        cadence: 'Preis zum Start',
+        price: 'Noch nicht festgelegt',
+        cadence: '',
         blurb: 'Für die Wochen, in denen du wirklich interviewst.',
         features: [
           'Alles aus Free',

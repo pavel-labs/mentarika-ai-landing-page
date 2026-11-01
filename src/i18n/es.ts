@@ -237,7 +237,7 @@ export const es: Dict = {
     eyebrow: 'Precios',
     heading: 'Empieza gratis. Mejora cuando estés buscando trabajo en serio.',
     flag: 'Para búsquedas activas',
-    foot: 'El precio de Pro se fija en el lanzamiento y se muestra en la tienda de apps y en la web antes de pagar.',
+    foot: 'El precio de Pro todavía no está definido.',
     tiers: [
       {
         tier: 'Free',
@@ -258,8 +258,8 @@ export const es: Dict = {
       },
       {
         tier: 'Pro',
-        price: 'TBA',
-        cadence: 'precio al lanzamiento',
+        price: 'Sin definir',
+        cadence: '',
         blurb: 'Para las semanas en que te estás entrevistando de verdad.',
         features: [
           'Todo lo de Free',

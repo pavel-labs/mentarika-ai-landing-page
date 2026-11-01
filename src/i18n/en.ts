@@ -237,7 +237,7 @@ export const en: Dict = {
     eyebrow: 'Pricing',
     heading: 'Start free. Upgrade when you are in an active job search.',
     flag: 'For active job searches',
-    foot: 'Pro pricing is set at launch and shown in the app store and on the web before you pay.',
+    foot: 'The Pro price has not been set yet.',
     tiers: [
       {
         tier: 'Free',
@@ -258,8 +258,8 @@ export const en: Dict = {
       },
       {
         tier: 'Pro',
-        price: 'TBA',
-        cadence: 'set at launch',
+        price: 'Price not set',
+        cadence: '',
         blurb: 'For the weeks when you are interviewing for real.',
         features: [
           'Everything in Free',

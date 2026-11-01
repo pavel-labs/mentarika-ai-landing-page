@@ -122,7 +122,7 @@ const jsonLd = {
       description: t.meta.description,
       url: localeUrl(locale, origin),
       publisher: { '@id': `${origin.origin}/#org` },
-      // Only the Free plan has a public price; Pro is set at launch, Enterprise by contract.
+      // Only the Free plan has a public price; Pro is not set yet, Enterprise is by contract.
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', name: 'Free' },
       featureList: [
         t.interview.eyebrow,

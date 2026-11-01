@@ -11,6 +11,7 @@ const { locale, content } = Astro.props;
 const pricing = getDict(locale).pricing;
 const labels = marketingLabels(locale);
 const prices = marketingSnapshot.pricing?.displayPrices;
+const showProPrice = false;
 const descriptions = content
   ? [
       content.pricing.freeDescription,
@@ -20,17 +21,22 @@ const descriptions = content
   : [];
 const tiers = pricing.tiers.map((tier, index) => {
   const isPro = index === 1;
-  const proPrice = prices?.proMonthly ?? labels.prices;
+  const proPrice = prices?.proMonthly ?? tier.price;
   if (!content) {
     return {
       ...tier,
-      ...(isPro ? { price: proPrice, cadence: prices ? labels.month : '' } : {}),
+      ...(isPro
+        ? {
+            price: showProPrice ? proPrice : tier.price,
+            cadence: showProPrice && prices ? labels.month : tier.cadence,
+          }
+        : {}),
     };
   }
   return {
     ...tier,
-    price: ['$0', proPrice, labels.contact][index] ?? '',
-    cadence: isPro && prices ? labels.month : '',
+    price: ['$0', showProPrice ? proPrice : tier.price, labels.contact][index] ?? '',
+    cadence: isPro && showProPrice && prices ? labels.month : '',
     blurb: descriptions[index] ?? '',
     features: [],
     cta: index === 2 ? labels.contact : content.hero.ctaLabel,

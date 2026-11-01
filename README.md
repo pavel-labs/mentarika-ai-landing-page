@@ -7,8 +7,8 @@ five languages.
 **Copy rule:** the site only claims what the product does today. Before adding a feature to
 the copy, check it in the app (or `docs/en/*` in the monorepo); planned Enterprise items live
 in the explicit "not available yet" list on `/enterprise`, never in a feature claim. No
-invented users, customers, statistics, testimonials or logos. Pro's price comes from the
-store at runtime, so the site says "set at launch" rather than hardcoding one.
+invented users, customers, statistics, testimonials or logos. Pro's price has not been set;
+the site shows a generic placeholder instead of a store price.
 
 Built with **[Astro](https://astro.build)** (ships ~zero JS), self-hosted variable fonts,
 and a shared design system: oversized typography, warm light surfaces, forest-green panels
