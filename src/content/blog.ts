@@ -1,11 +1,51 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { localePath, type Locale } from '../i18n';
+import { publishedArticles } from '../marketing/content';
+import type { IMarketingPublishedArticle } from '../marketing/types.generated';
 import { BLOG_CLUSTERS, type BlogClusterDefinition } from './blog-clusters';
 
 export type BlogPost = CollectionEntry<'blog'>;
 
+export interface EditorialEntry {
+  date: Date;
+  href: string;
+  title: string;
+  summary: string;
+}
+
 export async function getPublishedPosts(): Promise<BlogPost[]> {
   const posts = await getCollection('blog', (p) => !p.data.draft);
   return posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+}
+
+export async function getEditorialEntries(locale: Locale): Promise<EditorialEntry[]> {
+  const posts = await getPublishedPosts();
+  return mergeEditorialEntries(posts, publishedArticles(locale), locale);
+}
+
+export function mergeEditorialEntries(
+  posts: readonly BlogPost[],
+  articles: readonly Pick<
+    IMarketingPublishedArticle,
+    'slug' | 'title' | 'excerpt' | 'publishedAt'
+  >[],
+  locale: Locale,
+): EditorialEntry[] {
+  const entries = [
+    ...posts.map((post) => ({
+      date: post.data.date,
+      href: localePath(locale, `blog/${post.id}`),
+      title: post.data.title,
+      summary: post.data.summary,
+    })),
+    ...articles.map((article) => ({
+      date: new Date(article.publishedAt),
+      href: localePath(locale, `articles/${article.slug}`),
+      title: article.title,
+      summary: article.excerpt,
+    })),
+  ];
+  return entries.sort((a, b) => b.date.getTime() - a.date.getTime());
 }
 
 export function formatPostDate(date: Date, month: 'short' | 'long' = 'short'): string {

@@ -2,8 +2,7 @@ import { glob } from 'astro/loaders';
 import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
 
-// Changelog / launch-updates collection. English-only by design (a pre-launch
-// single-language changelog; localizing posts is deliberate non-scope for now).
+// Editorial posts are written in English; localized CMS articles appear in the same archive.
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: z.object({

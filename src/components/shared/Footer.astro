@@ -12,6 +12,7 @@ const t = getDict(locale);
 const content = marketingLanding(locale);
 const links = marketingLinks(locale);
 const labels = marketingLabels(locale);
+const blogLink = t.nav.find((link) => link.href === '/blog');
 const year = new Date().getFullYear();
 // Footer is shared by the landing AND the legal pages, so section links must point at the
 // localized home + anchor (not a bare #anchor that 404s the scroll off-page).
@@ -38,7 +39,7 @@ const home = localeHome(locale);
       ) : (
         t.nav.map((l) => <a href={resolveNavHref(locale, home, l.href)}>{l.label}</a>)
       )}
-      <a href={localePath(locale, 'articles')}>{labels.articles}</a>
+      {content && blogLink && <a href={localePath(locale, 'blog')}>{blogLink.label}</a>}
       {links.social.map((link) => (
         <a href={link.url} rel="noopener noreferrer">
           {link.label}

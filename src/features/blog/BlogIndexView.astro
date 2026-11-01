@@ -4,7 +4,12 @@ import Nav from '../../components/shared/Nav.astro';
 import Footer from '../../components/shared/Footer.astro';
 import type { Locale } from '../../i18n/index';
 import { getDict } from '../../i18n/index';
-import { getPublishedPosts, formatPostDate, clustersWithPosts } from '../../content/blog';
+import {
+  getPublishedPosts,
+  getEditorialEntries,
+  formatPostDate,
+  clustersWithPosts,
+} from '../../content/blog';
 import { localePath, localeHome } from '../../i18n/index';
 
 interface Props {
@@ -13,7 +18,10 @@ interface Props {
 const { locale } = Astro.props;
 const t = getDict(locale);
 
-const posts = await getPublishedPosts();
+const [posts, entries] = await Promise.all([
+  getPublishedPosts(),
+  getEditorialEntries(locale),
+]);
 const readingPaths = clustersWithPosts(posts);
 ---
 
@@ -30,7 +38,7 @@ const readingPaths = clustersWithPosts(posts);
       <p class="blog__intro">{t.contentHub.blog.lede}</p>
       <div class="blog__links">
         <a href={localePath(locale, 'resources')} class="blog__hub">
-          {t.contentHub.blog.primary} →
+          {t.contentHub.compare.secondary} →
         </a>
         <a href={localePath(locale, 'compare')} class="blog__hub">
           {t.contentHub.compare.primary}
@@ -63,14 +71,14 @@ const readingPaths = clustersWithPosts(posts);
       </section>
 
       <ul class="posts">
-        {posts.map((p) => (
+        {entries.map((entry) => (
           <li class="post">
-            <a href={localePath(locale, `blog/${p.id}`)} class="post__link">
-              <time class="post__date mono" datetime={p.data.date.toISOString()}>
-                {formatPostDate(p.data.date)}
+            <a href={entry.href} class="post__link">
+              <time class="post__date mono" datetime={entry.date.toISOString()}>
+                {formatPostDate(entry.date)}
               </time>
-              <h2 class="post__title">{p.data.title}</h2>
-              <p class="post__sum">{p.data.summary}</p>
+              <h2 class="post__title">{entry.title}</h2>
+              <p class="post__sum">{entry.summary}</p>
             </a>
           </li>
         ))}

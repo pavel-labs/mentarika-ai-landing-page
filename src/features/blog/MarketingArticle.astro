@@ -1,9 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { localeHome, localePath } from '../../i18n/index';
+import { getDict, localeHome, localePath } from '../../i18n/index';
 import { SITE } from '../../consts';
 import type { IMarketingPublishedArticle } from '../../marketing/types.generated';
-import { marketingLabels } from '../../marketing/content';
 import '../../marketing/styles.css';
 import '../../styles/reading.css';
 import Nav from '../../components/shared/Nav.astro';
@@ -13,7 +12,7 @@ interface Props {
   article: IMarketingPublishedArticle;
 }
 const { article } = Astro.props;
-const labels = marketingLabels(article.locale);
+const blogLabel = getDict(article.locale).nav.find((link) => link.href === '/blog')?.label;
 const url = new URL(
   localePath(article.locale, `articles/${article.slug}`),
   Astro.site ?? SITE.domain,
@@ -44,8 +43,8 @@ const jsonLd = [
 >
   <Nav locale={article.locale} homeHref={localeHome(article.locale)} />
   <main id="main" class="cms-article reading-shell" data-marketing-article>
-    <a class="link-arrow" href={localePath(article.locale, 'articles')}>
-      ← {labels.articles}
+    <a class="link-arrow" href={localePath(article.locale, 'blog')}>
+      ← {blogLabel}
     </a>
     <header class="reading-header">
       <p class="mono">

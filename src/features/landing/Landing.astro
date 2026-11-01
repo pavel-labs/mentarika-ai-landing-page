@@ -17,8 +17,7 @@ import CTA from './CTA.astro';
 import BlogTeaser from '../blog/BlogTeaser.astro';
 import Footer from '../../components/shared/Footer.astro';
 import ManagedLanding from './ManagedLanding.astro';
-import Articles from '../blog/Articles.astro';
-import { marketingLanding, publishedArticles } from '../../marketing/content';
+import { marketingLanding } from '../../marketing/content';
 
 interface Props {
   locale: Locale;
@@ -53,7 +52,6 @@ const enabledFaq = content?.faq.filter((item) => item.enabled);
     <CTA locale={locale} />
     </>}
     <PracticeModes locale={locale} />
-    {publishedArticles(locale).length > 0 && <Articles locale={locale} compact />}
     <BlogTeaser locale={locale} />
   </main>
   <Footer locale={locale} />

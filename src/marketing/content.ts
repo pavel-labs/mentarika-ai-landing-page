@@ -1,5 +1,5 @@
 import { API } from '../consts';
-import { getDict, type Locale } from '../i18n';
+import { getDict, LOCALES, type Locale } from '../i18n';
 import snapshot from './snapshot.generated.json';
 import type { IMarketingLanding, IMarketingLinks, IMarketingSnapshot } from './types.generated';
 
@@ -34,8 +34,15 @@ export const marketingLinks = (locale: Locale): IMarketingLinks =>
     googlePlayUrl: storeUrl(import.meta.env.PUBLIC_GOOGLE_PLAY_URL, 'google'),
     social: [],
   };
+export const hasCompleteLocalizedLanding = (
+  landing: readonly Pick<IMarketingLanding, 'locale'>[],
+  locales: readonly Locale[] = LOCALES,
+) => locales.every((locale) => landing.some((page) => page.locale === locale));
+const hasLocalizedLanding = hasCompleteLocalizedLanding(marketingSnapshot.landing);
 export const marketingLanding = (locale: Locale) =>
-  marketingSnapshot.landing.find((page) => page.locale === locale) ?? null;
+  hasLocalizedLanding
+    ? (marketingSnapshot.landing.find((page) => page.locale === locale) ?? null)
+    : null;
 const quickPractice = {
   en: {
     title: 'Quick Practice',
@@ -121,8 +128,6 @@ export const defaultLanding = (locale: Locale): IMarketingLanding => {
 const labels = {
   en: {
     open: 'Open web app',
-    articles: 'Articles',
-    read: 'Read article',
     prices: 'See prices in the app',
     contact: 'Talk to us',
     month: '/ month · USD reference',
@@ -133,8 +138,6 @@ const labels = {
   },
   de: {
     open: 'Web-App öffnen',
-    articles: 'Artikel',
-    read: 'Artikel lesen',
     prices: 'Preise in der App',
     contact: 'Kontakt aufnehmen',
     month: '/ Monat · USD-Richtpreis',
@@ -145,8 +148,6 @@ const labels = {
   },
   es: {
     open: 'Abrir aplicación web',
-    articles: 'Artículos',
-    read: 'Leer artículo',
     prices: 'Ver precios en la app',
     contact: 'Contactar',
     month: '/ mes · referencia USD',
@@ -157,8 +158,6 @@ const labels = {
   },
   ru: {
     open: 'Открыть веб-приложение',
-    articles: 'Статьи',
-    read: 'Читать статью',
     prices: 'Цены в приложении',
     contact: 'Связаться с нами',
     month: '/ месяц · цена в USD',
@@ -169,8 +168,6 @@ const labels = {
   },
   pl: {
     open: 'Otwórz aplikację web',
-    articles: 'Artykuły',
-    read: 'Czytaj artykuł',
     prices: 'Ceny w aplikacji',
     contact: 'Porozmawiaj z nami',
     month: '/ miesiąc · cena w USD',

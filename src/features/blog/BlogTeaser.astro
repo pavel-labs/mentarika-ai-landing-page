@@ -1,7 +1,7 @@
 ---
 import type { Locale } from '../../i18n/index';
 import { getDict, localePath } from '../../i18n/index';
-import { getPublishedPosts, formatPostDate } from '../../content/blog';
+import { getEditorialEntries, formatPostDate } from '../../content/blog';
 
 interface Props {
   locale: Locale;
@@ -9,7 +9,7 @@ interface Props {
 const { locale } = Astro.props;
 const t = getDict(locale);
 
-const posts = (await getPublishedPosts()).slice(0, 4);
+const entries = (await getEditorialEntries(locale)).slice(0, 4);
 ---
 
 <section class="journal" aria-labelledby="journal-title">
@@ -28,14 +28,14 @@ const posts = (await getPublishedPosts()).slice(0, 4);
     </div>
 
     <div class="journal__grid">
-      {posts.map((post) => (
+      {entries.map((entry) => (
         <article class="journal__card">
-          <a href={localePath(locale, `blog/${post.id}`)} class="journal__link">
-            <time class="journal__date mono" datetime={post.data.date.toISOString()}>
-              {formatPostDate(post.data.date)}
+          <a href={entry.href} class="journal__link">
+            <time class="journal__date mono" datetime={entry.date.toISOString()}>
+              {formatPostDate(entry.date)}
             </time>
-            <h3 class="journal__title">{post.data.title}</h3>
-            <p class="journal__summary">{post.data.summary}</p>
+            <h3 class="journal__title">{entry.title}</h3>
+            <p class="journal__summary">{entry.summary}</p>
           </a>
         </article>
       ))}

@@ -2,7 +2,12 @@ import addFormats from 'ajv-formats';
 import Ajv2020 from 'ajv/dist/2020';
 import { describe, expect, it } from 'vitest';
 import { LOCALES } from '../i18n';
-import { defaultLanding, safeUrl, storeUrl } from './content';
+import {
+  defaultLanding,
+  hasCompleteLocalizedLanding,
+  safeUrl,
+  storeUrl,
+} from './content';
 import contract from './contract.generated.json';
 
 describe('marketing migration defaults', () => {
@@ -14,6 +19,10 @@ describe('marketing migration defaults', () => {
     expect(defaultLanding(locale).features.map((feature) => feature.id)).toContain(
       'quick-practice',
     );
+  });
+  it('uses the same landing template until CMS content exists in every locale', () => {
+    expect(hasCompleteLocalizedLanding([{ locale: 'en' }])).toBe(false);
+    expect(hasCompleteLocalizedLanding(LOCALES.map((locale) => ({ locale })))).toBe(true);
   });
   it('keeps unconfigured and invalid destinations unavailable', () => {
     expect(safeUrl(undefined)).toBeNull();

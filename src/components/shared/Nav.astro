@@ -13,13 +13,14 @@ const { locale, homeHref = '#main' } = Astro.props;
 const t = getDict(locale);
 const content = marketingLanding(locale);
 const labels = marketingLabels(locale);
+const blogLink = t.nav.find((link) => link.href === '/blog');
 const nav = content
   ? [
       { label: labels.products, href: '#product' },
       { label: t.pricing.eyebrow, href: '#pricing' },
-      { label: labels.articles, href: '/articles' },
+      ...(blogLink ? [blogLink] : []),
     ]
-  : [...t.nav, { label: labels.articles, href: '/articles' }];
+  : t.nav;
 const resolveHref = (href: string) => resolveNavHref(locale, homeHref, href);
 const eventFor = (href: string) =>
   href === '#pricing'

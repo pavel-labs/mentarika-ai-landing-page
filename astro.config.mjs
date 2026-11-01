@@ -29,6 +29,13 @@ export default defineConfig({
     locales: ['en', 'de', 'es', 'ru', 'pl'],
     routing: { prefixDefaultLocale: false },
   },
+  redirects: {
+    '/articles': '/blog/',
+    '/de/articles': '/de/blog/',
+    '/es/articles': '/es/blog/',
+    '/pl/articles': '/pl/blog/',
+    '/ru/articles': '/ru/blog/',
+  },
   integrations: [
     sitemap({
       // Blog posts are English-only; /<locale>/blog/<slug> copies canonicalize to the
