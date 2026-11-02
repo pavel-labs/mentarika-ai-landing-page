@@ -130,10 +130,13 @@ See `.env.example`. All `PUBLIC_*` (inlined into the static build – no secrets
 
 - External analytics is configured in the app admin (Configuration → Availability), not at
   build time. `PUBLIC_CF_BEACON_TOKEN` is no longer read. See [SEO and analytics](docs/seo-and-analytics.md).
-- `PUBLIC_API_URL` – backend origin for the Enterprise contact form (e.g.
-  `https://api.example.com`, no trailing slash). Empty → the form renders a disabled note.
-  The backend must list this site's origin in `ALLOWED_ORIGINS`, or the browser blocks the
-  request (CORS). See the monorepo's `docs/en/environment.md`.
+- `PUBLIC_API_URL` – API base for the Enterprise contact form (no trailing slash). In production
+  it is this site's own proxy, `https://mentarika.app/api`: nginx forwards `/api/*` (prefix
+  stripped) to `BACKEND_UPSTREAM`, the backend's private Railway address, so the page never names
+  the backend host and sends no CORS preflight. Empty → the form renders a disabled note. See the
+  monorepo's `docs/en/environment.md`.
+- `BACKEND_UPSTREAM` – runtime variable (not build): where `/api/` proxies to, e.g.
+  `http://mentarabackend.railway.internal:3001`. Unset, the local default answers 502.
 - `SITE_URL` / `BASE_PATH` – hosting overrides (production default = `https://mentarika.app`,
   set as a Railway build variable on the `landing` service — see below).
 
@@ -233,8 +236,10 @@ Hosted HTTPS images require alt text; image uploads and scheduled publishing are
 
 Set public build variables in this repository:
 
-- `PUBLIC_API_URL`: backend origin for Enterprise enquiries and CTA counters; also used for
-  published content after explicit activation.
+- `PUBLIC_API_URL`: API base for Enterprise enquiries and CTA counters (`https://mentarika.app/api`,
+  the site's own proxy); also used for published content after explicit activation. The build
+  fetches the snapshot through it, so switch it to the proxy only after a deploy that serves
+  `/api/`.
 - `MARKETING_CONTENT_ENABLED`: defaults to `false`. Set `true` only after the deployed backend
   returns HTTP 200 and a valid snapshot from `GET /marketing/export`. An enabled build requires
   `PUBLIC_API_URL` and stops on a fetch/validation error. Keep it enabled once CMS content is live.
