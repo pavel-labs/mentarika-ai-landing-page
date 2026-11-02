@@ -132,11 +132,11 @@ See `.env.example`. All `PUBLIC_*` (inlined into the static build – no secrets
   build time. `PUBLIC_CF_BEACON_TOKEN` is no longer read. See [SEO and analytics](docs/seo-and-analytics.md).
 - `PUBLIC_API_URL` – API base for the Enterprise contact form (no trailing slash). In production
   it is this site's own proxy, `https://mentarika.app/api`: nginx forwards `/api/*` (prefix
-  stripped) to `BACKEND_UPSTREAM`, the backend's private Railway address, so the page never names
-  the backend host and sends no CORS preflight. Empty → the form renders a disabled note. See the
+  stripped) to `BACKEND_UPSTREAM`, so the page never names the backend host. Empty → the form renders a disabled note. See the
   monorepo's `docs/en/environment.md`.
-- `BACKEND_UPSTREAM` – runtime variable (not build): where `/api/` proxies to, e.g.
-  `http://mentarabackend.railway.internal:3001`. Unset, the local default answers 502.
+- `BACKEND_UPSTREAM` – runtime variable (not build): the backend's private Railway address that
+  `/api/` proxies to (`http://<service>.railway.internal:<port>`). Unset, the local default answers
+  502.
 - `SITE_URL` / `BASE_PATH` – hosting overrides (production default = `https://mentarika.app`,
   set as a Railway build variable on the `landing` service — see below).
 

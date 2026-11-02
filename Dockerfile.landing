@@ -13,8 +13,7 @@
 #   PUBLIC_APP_STORE_URL, PUBLIC_GOOGLE_PLAY_URL,
 #   PUBLIC_ADMIN_ORIGINS, BASE_PATH
 #   PORT                        injected by Railway at runtime (nginx listens on it)
-#   BACKEND_UPSTREAM            runtime: the backend's private address that /api/ proxies to,
-#                               e.g. http://mentarabackend.railway.internal:3001
+#   BACKEND_UPSTREAM            runtime: the backend's private address that /api/ proxies to
 
 # ── Builder ───────────────────────────────────────────────────────────────────
 # bookworm-slim (glibc), not alpine: @resvg/resvg-js (favicon rasterization in
@@ -56,8 +55,7 @@ FROM nginx:alpine AS runner
 
 # Local-run default; Railway overrides PORT at runtime.
 ENV PORT=8080
-# The backend /api/ proxies to; Railway sets the private address. The default only keeps a local
-# `docker run` starting (the proxy then answers 502).
+# Only keeps a local `docker run` starting; the proxy then answers 502.
 ENV BACKEND_UPSTREAM=http://127.0.0.1:3001
 # Exports NGINX_LOCAL_RESOLVERS from /etc/resolv.conf for the template's `resolver` directive.
 ENV NGINX_ENTRYPOINT_LOCAL_RESOLVERS=true
