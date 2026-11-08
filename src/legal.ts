@@ -17,8 +17,8 @@ export const PRIVACY: LegalSection[] = [
     heading: '1. Scope',
     body: [
       'This policy explains what Mentarika ("we") collects when you use the Mentarika web app and this site, and how it is used. Mentarika is an AI mock-interview practice product for software engineers.',
-      `Mentarika is a personal project. Its operator, and the data controller for the personal data described in this policy, is Pavel Piatrovich, a private individual. Contact: ${LEGAL_CONTACT}.`,
-      'This is a pre-launch draft. The country of the data controller must be added before launch.',
+      `Mentarika is a personal project. Its operator, and the data controller for the personal data described in this policy, is Pavel Piatrovich, a private individual based in Poland. Contact: ${LEGAL_CONTACT}.`,
+      'This is a pre-launch draft.',
     ],
   },
   {
@@ -39,12 +39,13 @@ export const PRIVACY: LegalSection[] = [
     heading: '3. How we use it',
     body: [
       'To run interviews and coding assessments, generate your scores and reports, track your progress, send the notifications you opted into, and keep the service secure and working.',
+      'Under the GDPR we rely on these legal bases: performance of our agreement with you (your account, interviews, voice, code, reports and progress), our legitimate interest in keeping the service secure and working (diagnostics and abuse prevention), and your consent (push notifications and optional website analytics). You can withdraw consent at any time.',
     ],
   },
   {
     heading: '4. AI processing',
     body: [
-      'To produce the interviewer’s responses and your scoring, your session content is sent to third-party AI model providers acting as our processors. It is used to generate your results, not to train their public models.',
+      'To produce the interviewer’s responses and your scoring, your session content is sent to third-party AI model providers acting as our processors. It is used to generate your results, not to train their public models. Scores and reports are generated automatically for your own practice and have no legal effect on you.',
     ],
   },
   {
@@ -65,7 +66,7 @@ export const PRIVACY: LegalSection[] = [
   {
     heading: '7. Your rights',
     body: [
-      'Depending on where you live, you may have rights to access, correct, export, or delete your data, object to or restrict some processing, and complain to a data-protection authority. The applicable rights and request process must be reviewed for the regions where the service is offered. Contact us to exercise your rights.',
+      'You have the right to access, correct, export or delete your data, and to object to or restrict some processing. Contact us to exercise these rights; we answer within one month. You can also complain to the President of the Personal Data Protection Office in Poland (uodo.gov.pl) or to the data-protection authority of the EU country where you live.',
     ],
   },
   {
@@ -138,7 +139,7 @@ export const TERMS: LegalSection[] = [
   {
     heading: '10. Governing law, changes & contact',
     body: [
-      `Governing law and venue will be specified before launch (TODO with counsel). We may update these terms and will note the date below. Questions: ${LEGAL_CONTACT}.`,
+      `These terms are governed by the law of Poland. That choice does not remove any mandatory protection you have under the consumer law of the country where you live. Disputes go to the courts of Poland, unless mandatory law lets you bring them in your home courts. We may update these terms and will note the date below. Questions: ${LEGAL_CONTACT}.`,
     ],
   },
 ];
