@@ -5,7 +5,6 @@
 // `effectiveDate` is the single place to bump the "last updated" stamp.
 
 export const LEGAL_EFFECTIVE_DATE = '2026-11-08';
-// TODO: verify that this mailbox is live and monitored before launch.
 export const LEGAL_CONTACT = 'privacy@mentarika.app';
 
 export interface LegalSection {
@@ -18,7 +17,8 @@ export const PRIVACY: LegalSection[] = [
     heading: '1. Scope',
     body: [
       'This policy explains what Mentarika ("we") collects when you use the Mentarika web app and this site, and how it is used. Mentarika is an AI mock-interview practice product for software engineers.',
-      'This is a pre-launch draft. The legal identity, country and contact address of the data controller must be added before launch.',
+      `Mentarika is a personal project. Its operator, and the data controller for the personal data described in this policy, is Pavel Piatrovich, a private individual. Contact: ${LEGAL_CONTACT}.`,
+      'This is a pre-launch draft. The country of the data controller must be added before launch.',
     ],
   },
   {
@@ -84,7 +84,7 @@ export const TERMS: LegalSection[] = [
   {
     heading: '1. Acceptance',
     body: [
-      'By using Mentarika you agree to these terms. If you do not agree, do not use the service. This is a pre-launch draft.',
+      'Mentarika is a personal project operated by Pavel Piatrovich, a private individual ("we"). By using Mentarika you agree to these terms. If you do not agree, do not use the service. This is a pre-launch draft.',
     ],
   },
   {
