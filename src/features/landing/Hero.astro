@@ -1,7 +1,7 @@
 ---
 import StoreBadges from '../../components/shared/StoreBadges.astro';
 import InterviewPreview from './InterviewPreview.astro';
-import { getDict, localePath, type Locale } from '../../i18n/index';
+import { getDict, type Locale } from '../../i18n/index';
 import { marketingLabels } from '../../marketing/content';
 import type { IMarketingLanding } from '../../marketing/types.generated';
 interface Props {
@@ -50,14 +50,6 @@ const labels = marketingLabels(locale);
           <span aria-hidden="true">↓</span>
         </a>
       )}
-      <a
-        class="btn btn--ghost"
-        href={localePath(locale, 'enterprise')}
-        data-marketing-event="enterprise_cta"
-      >
-        {t.hero.teamsLink}
-        <span aria-hidden="true">↗</span>
-      </a>
     </div>
     <p class="hero__availability mono">{t.hero.availability}</p>
   </div>

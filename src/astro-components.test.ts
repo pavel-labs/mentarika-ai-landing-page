@@ -10,7 +10,14 @@ type AstroComponent = Parameters<
 const components = import.meta.glob<{
   default: AstroComponent;
 }>(
-  ['./components/**/*.astro', './features/**/*.astro', './layouts/**/*.astro', './pages/**/*.astro'],
+  [
+    './components/**/*.astro',
+    './features/**/*.astro',
+    './layouts/**/*.astro',
+    './pages/**/*.astro',
+    // These only redirect while Teams is off the site, so there is nothing to render.
+    '!./pages/**/enterprise.astro',
+  ],
   { eager: true },
 );
 

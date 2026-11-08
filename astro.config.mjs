@@ -40,7 +40,8 @@ export default defineConfig({
     sitemap({
       filter: (page) =>
         !new URL(page).pathname.includes('/preview/') &&
-        !new URL(page).pathname.includes('/marketing/defaults/'),
+        !new URL(page).pathname.includes('/marketing/defaults/') &&
+        !new URL(page).pathname.includes('/enterprise'),
       i18n: {
         defaultLocale: 'en',
         locales: { en: 'en-US', de: 'de-DE', es: 'es-ES', ru: 'ru-RU', pl: 'pl-PL' },
