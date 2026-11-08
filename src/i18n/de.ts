@@ -19,14 +19,13 @@ export const de: Dict = {
     title: "Mentarika – KI-Praxis für Entwicklung, QA und Unternehmensberatung",
     description: "Üben Sie technische Interviews, QA-Szenarien und Finanz- und Unternehmensberatung mit KI-Feedback. Spezialisierte Modi sind je nach Pilottest verfügbar.",
     tagline: 'Übe das Interview, nicht nur die Fragen.',
-    launchLabel: 'Im Test · Start Januar 2027',
+    launchLabel: 'Im Web verfügbar · Kostenlos',
   },
 
   nav: [
     { label: 'Interviews', href: '#interview' },
     { label: 'Assessments', href: '#assessments' },
     { label: 'Preise', href: '#pricing' },
-    { label: 'Teams', href: '/enterprise' },
     { label: 'Blog', href: '/blog' },
   ],
 
@@ -35,7 +34,7 @@ export const de: Dict = {
     titleLead: 'Übe das technische Interview,',
     titleAccent: 'nicht nur die Fragen.',
     lede: 'Mentarika führt ein strukturiertes Interview für deine Rolle und deinen Stack, hakt bei dem nach, was du wirklich gesagt hast, prüft deinen Code mit versteckten Tests und gibt dir einen Bericht, der auf deine Schwächen zeigt – damit die nächste Session genau dort ansetzt.',
-    availability: 'Im Test · Start Januar 2027 auf Web, iOS & Android',
+    availability: 'Im Web verfügbar · Kostenlos · iOS und Android folgen',
     teamsLink: 'Für Engineering-Teams',
   },
 
@@ -235,9 +234,9 @@ export const de: Dict = {
 
   pricing: {
     eyebrow: 'Preise',
-    heading: 'Kostenlos starten. Upgraden, wenn du aktiv auf Jobsuche bist.',
+    heading: 'Kostenlos. Ohne Karte, ohne Testphase.',
     flag: 'Für die aktive Jobsuche',
-    foot: 'Der Pro-Preis steht noch nicht fest.',
+    foot: 'Die Limits erneuern sich alle 30 Tage.',
     tiers: [
       {
         tier: 'Free',
@@ -249,11 +248,11 @@ export const de: Dict = {
           '3 Voice-Interviews alle 30 Tage',
           'Vollständiger Bericht nach jedem Interview',
           'Alle Rollen, Level und Technologien',
-          'Coding-Assessments',
+          '3 Coding-Assessments alle 30 Tage',
           'Tägliche Challenges und Achievements',
         ],
         featured: false,
-        cta: 'Zum Start',
+        cta: 'Kostenlos starten',
         href: '#waitlist',
       },
       {
@@ -329,24 +328,20 @@ export const de: Dict = {
       },
       {
         q: 'Kann ich laut antworten?',
-        a: 'Ja. Tippe aufs Mikrofon, sprich, und deine Antwort wird transkribiert. Der Free-Plan enthält 3 Voice-Interviews alle 30 Tage; Pro hat kein Limit.',
-      },
-      {
-        q: 'Was sieht mein Arbeitgeber, wenn meine Firma Mentarika nutzt?',
-        a: 'Nur dein Beitrittsdatum, wie viele Interviews du in den letzten 30 Tagen gemacht hast und wann du zuletzt aktiv warst. Team-Skill-Durchschnitte erscheinen erst, wenn mindestens fünf Personen beigetragen haben. Keine Rolle in einer Organisation kann deine Transkripte oder deine persönlichen Berichte lesen.',
+        a: 'Ja. Tippe aufs Mikrofon, sprich, und deine Antwort wird transkribiert. Du hast alle 30 Tage 3 Voice-Interviews.',
       },
       {
         q: 'Wann kann ich es nutzen?',
-        a: 'Mentarika befindet sich derzeit in einem begrenzten Testbetrieb und startet im Januar 2027 im Web, auf iOS und Android.',
+        a: 'Jetzt. Mentarika ist im Web verfügbar und kostenlos. Apps für iOS und Android folgen später.',
       },
     ],
   },
 
   cta: {
-    eyebrow: 'Start Januar 2027',
+    eyebrow: 'Im Web verfügbar',
     titleLead: 'Dein nächstes Interview kommt.',
     titleAccent: 'Übe, bevor es so weit ist.',
-    lede: 'Mentarika startet im Januar 2027 im Web, auf iOS und Android.',
+    lede: 'Mentarika ist im Web kostenlos. Registriere dich und mach noch heute dein erstes Interview.',
   },
 
   enterprise: {

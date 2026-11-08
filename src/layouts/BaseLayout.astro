@@ -118,18 +118,17 @@ const jsonLd = {
       '@type': 'SoftwareApplication',
       name: SITE.name,
       applicationCategory: 'EducationApplication',
-      operatingSystem: 'Web, iOS, Android',
+      operatingSystem: 'Web',
       description: t.meta.description,
       url: localeUrl(locale, origin),
       publisher: { '@id': `${origin.origin}/#org` },
-      // Only the Free plan has a public price; Pro is not set yet, Enterprise is by contract.
+      // The public release is free and has one plan.
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', name: 'Free' },
       featureList: [
         t.interview.eyebrow,
         t.assessment.eyebrow,
         t.report.eyebrow,
         t.progress.eyebrow,
-        t.teamsBand.eyebrow,
       ],
     },
     ...(includeFaq ? [faqNode] : []),
