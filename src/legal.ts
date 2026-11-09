@@ -46,12 +46,15 @@ export const PRIVACY: LegalSection[] = [
     heading: '4. AI processing',
     body: [
       'To produce the interviewer’s responses and your scoring, your session content is sent to third-party AI model providers acting as our processors. It is used to generate your results, not to train their public models. Scores and reports are generated automatically for your own practice and have no legal effect on you.',
+      'Interviews currently run on a model provided by Z.ai, which is operated from Singapore. The text of your answers is sent there without your name, email address or account ID. According to Z.ai’s terms, this text is processed in real time and not stored on its servers.',
+      'Before your answers are sent to any AI model, we remove email addresses, phone numbers and links. We cannot detect everything, so please do not mention the names of people, employers or clients, or anything else that identifies you. Code you submit in a coding assessment is sent unchanged.',
     ],
   },
   {
     heading: '5. Sharing',
     body: [
-      'We share data only with processors that run the service: authentication (Clerk), AI models (Z.ai, OpenAI, Groq), speech-to-text (Groq), text-to-speech (Google Cloud, ElevenLabs), code execution (onlinecompiler.io), optional website analytics (Umami Cloud is currently configured; Cloudflare Web Analytics is supported as an alternative, only after consent), error monitoring (Sentry), email delivery (Resend), security and content delivery (Cloudflare), and hosting (Railway). The code editor in assessments loads its files from unpkg, which receives your IP address when it serves them. Some of these providers process data outside the European Economic Area. We do not sell your data.',
+      'We share data only with processors that run the service: authentication (Clerk), AI models (Z.ai, OpenAI), speech-to-text (Groq), text-to-speech (Google Cloud, ElevenLabs), code execution (onlinecompiler.io), optional website analytics (Umami Cloud is currently configured; Cloudflare Web Analytics is supported as an alternative, only after consent), error monitoring (Sentry), email delivery (Resend), security and content delivery (Cloudflare), and hosting (Railway). The code editor in assessments loads its files from unpkg, which receives your IP address when it serves them. We do not sell your data.',
+      'Transfers outside the European Economic Area. United States (OpenAI, Groq, Google Cloud, ElevenLabs, Cloudflare): the EU standard contractual clauses or the EU-US Data Privacy Framework, as set out in each provider’s data processing terms. Singapore (Z.ai): Singapore has no EU adequacy decision, and Z.ai’s terms do not include the EU standard contractual clauses.',
       'Organizations: if you join an organization on Mentarika (for example through your employer), it sees only your join date, how many interviews you did in the last 30 days, and your last activity. Team skill averages are shown only when at least five people contributed. No one in the organization can read your transcripts or individual reports.',
       'Candidate assignments: if you accept an interview or assessment sent by a company, you are shown what will be shared before you start. The company sees the resulting report or test results and scores – not your transcript or submitted code.',
     ],
