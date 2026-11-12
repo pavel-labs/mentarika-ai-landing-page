@@ -45,7 +45,7 @@ export const PRIVACY: LegalSection[] = [
     heading: '4. AI processing',
     body: [
       'To produce the interviewer’s responses and your scoring, your session content is sent to third-party AI model providers acting as our processors. It is used to generate your results, not to train their public models. Scores and reports are generated automatically for your own practice and have no legal effect on you.',
-      'Interviews currently run on a model from an AI provider operated from Singapore. The text of your answers is sent there without your name, email address or account ID. According to that provider’s terms, this text is processed in real time and not stored on its servers.',
+      'The text of your answers is sent to our AI model provider without your name, email address or account ID. Under its terms it is not used to train models, and it may be kept for up to 30 days to detect abuse.',
       'Before your answers are sent to any AI model, we remove email addresses, phone numbers and links. We cannot detect everything, so please do not mention the names of people, employers or clients, or anything else that identifies you. Code you submit in a coding assessment is sent unchanged.',
     ],
   },
@@ -53,7 +53,7 @@ export const PRIVACY: LegalSection[] = [
     heading: '5. Sharing',
     body: [
       'We share data only with processors that run the service: providers of authentication, AI models, speech-to-text and text-to-speech, code execution, optional website analytics (only after consent), error monitoring, email delivery, security and content delivery, and hosting. The code editor in assessments loads its files from a public content delivery network, which receives your IP address when it serves them. We do not sell your data.',
-      'Transfers outside the European Economic Area. United States: the EU standard contractual clauses or the EU-US Data Privacy Framework, as set out in each provider’s data processing terms. Singapore (the AI model provider that runs interviews): Singapore has no EU adequacy decision, and that provider’s terms do not include the EU standard contractual clauses.',
+      'Transfers outside the European Economic Area. United States: the EU standard contractual clauses or the EU-US Data Privacy Framework, as set out in each provider’s data processing terms.',
       'Organizations: if you join an organization on Mentarika (for example through your employer), it sees only your join date, how many interviews you did in the last 30 days, and your last activity. Team skill averages are shown only when at least five people contributed. No one in the organization can read your transcripts or individual reports.',
       'Candidate assignments: if you accept an interview or assessment sent by a company, you are shown what will be shared before you start. The company sees the resulting report or test results and scores – not your transcript or submitted code.',
     ],
