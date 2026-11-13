@@ -589,7 +589,7 @@ export const de: Dict = {
   legal: {
     privacyTitle: 'Datenschutzerklärung',
     termsTitle: 'Nutzungsbedingungen',
-    notice: 'Maßgeblich ist die englische Fassung dieser Seite.',
+    notice: 'Dies ist eine Übersetzung. Bei Abweichungen gilt die englische Fassung.',
     updated: 'Zuletzt aktualisiert',
     back: 'Zurück zur Startseite',
   },
