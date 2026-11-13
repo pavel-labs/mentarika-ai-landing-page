@@ -589,8 +589,7 @@ export const en: Dict = {
   legal: {
     privacyTitle: 'Privacy Policy',
     termsTitle: 'Terms of Service',
-    draftNotice:
-      'Draft – not legal advice. To be reviewed with counsel before launch; the English version is authoritative.',
+    notice: 'The English version of this page is the authoritative one.',
     updated: 'Last updated',
     back: 'Back to home',
   },

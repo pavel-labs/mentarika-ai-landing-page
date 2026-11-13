@@ -591,8 +591,7 @@ export const es: Dict = {
   legal: {
     privacyTitle: 'Política de privacidad',
     termsTitle: 'Términos del servicio',
-    draftNotice:
-      'Borrador – no es asesoramiento legal. Se revisará con asesoría jurídica antes del lanzamiento; la versión en inglés es la auténtica.',
+    notice: 'La versión en inglés de esta página es la que prevalece.',
     updated: 'Última actualización',
     back: 'Volver al inicio',
   },

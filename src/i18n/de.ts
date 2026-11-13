@@ -589,8 +589,7 @@ export const de: Dict = {
   legal: {
     privacyTitle: 'Datenschutzerklärung',
     termsTitle: 'Nutzungsbedingungen',
-    draftNotice:
-      'Entwurf – keine Rechtsberatung. Vor dem Start mit Anwält:innen zu prüfen; die englische Fassung ist maßgeblich.',
+    notice: 'Maßgeblich ist die englische Fassung dieser Seite.',
     updated: 'Zuletzt aktualisiert',
     back: 'Zurück zur Startseite',
   },

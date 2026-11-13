@@ -294,7 +294,7 @@ export interface Dict {
   legal: {
     privacyTitle: string;
     termsTitle: string;
-    draftNotice: string;
+    notice: string;
     updated: string;
     back: string;
   };

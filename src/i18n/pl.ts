@@ -590,8 +590,7 @@ export const pl: Dict = {
   legal: {
     privacyTitle: 'Polityka prywatności',
     termsTitle: 'Regulamin',
-    draftNotice:
-      'Wersja robocza – to nie jest porada prawna. Do weryfikacji z prawnikiem przed premierą; wiążąca jest wersja angielska.',
+    notice: 'Wiążąca jest angielska wersja tej strony.',
     updated: 'Ostatnia aktualizacja',
     back: 'Powrót na stronę główną',
   },

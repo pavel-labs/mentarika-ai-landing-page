@@ -1,5 +1,4 @@
-// DRAFT legal content – English is authoritative. Not legal advice; review with counsel
-// before launch. Kept in English on purpose (auto-translated binding clauses are a
+// Legal content – English is authoritative. Kept in English on purpose (auto-translated binding clauses are a
 // liability – the page shell/notice is localized, these clauses are not).
 //
 // `effectiveDate` is the single place to bump the "last updated" stamp.
@@ -18,7 +17,6 @@ export const PRIVACY: LegalSection[] = [
     body: [
       'This policy explains what Mentarika ("we") collects when you use the Mentarika web app and this site, and how it is used. Mentarika is an AI mock-interview practice product for software engineers.',
       `Mentarika is a personal project. Its operator, and the data controller for the personal data described in this policy, is Pavel Piatrovich, a private individual based in Poland. Contact: ${LEGAL_CONTACT}.`,
-      'This is a pre-launch draft.',
     ],
   },
   {
@@ -88,7 +86,7 @@ export const TERMS: LegalSection[] = [
   {
     heading: '1. Acceptance',
     body: [
-      'Mentarika is a personal project operated by Pavel Piatrovich, a private individual ("we"). By using Mentarika you agree to these terms. If you do not agree, do not use the service. This is a pre-launch draft.',
+      'Mentarika is a personal project operated by Pavel Piatrovich, a private individual ("we"). By using Mentarika you agree to these terms. If you do not agree, do not use the service.',
     ],
   },
   {
