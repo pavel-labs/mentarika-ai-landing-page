@@ -1,7 +1,7 @@
 ---
 import { SITE } from '../../consts';
 import { getDict, resolveNavHref, type Locale } from '../../i18n';
-import { marketingLanding, marketingLabels } from '../../marketing/content';
+import { marketingLabels, marketingLanding, marketingLinks } from '../../marketing/content';
 import BrandMark from './BrandMark.astro';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 
@@ -13,6 +13,7 @@ const { locale, homeHref = '#main' } = Astro.props;
 const t = getDict(locale);
 const content = marketingLanding(locale);
 const labels = marketingLabels(locale);
+const webAppUrl = (content?.links ?? marketingLinks(locale)).webAppUrl;
 const blogLink = t.nav.find((link) => link.href === '/blog');
 const nav = content
   ? [
@@ -47,10 +48,17 @@ const eventFor = (href: string) =>
     </nav>
     <div class="nav__end">
       <LanguageSwitcher locale={locale} />
-      <span class="pill nav__launch">
-        <span class="dot" aria-hidden="true"></span>
-        {t.meta.launchLabel}
-      </span>
+      {webAppUrl ? (
+        <a class="pill nav__launch" href={webAppUrl} data-marketing-event="web_app_cta">
+          <span class="dot" aria-hidden="true" />
+          {t.meta.launchLabel}
+        </a>
+      ) : (
+        <span class="pill nav__launch">
+          <span class="dot" aria-hidden="true" />
+          {t.meta.launchLabel}
+        </span>
+      )}
       <details class="menu">
         <summary class="menu__btn" aria-label={t.a11yMenu}>
           <span class="menu__bars" aria-hidden="true"></span>
@@ -137,6 +145,13 @@ const eventFor = (href: string) =>
   }
   .nav__launch {
     max-width: 13rem;
+  }
+  a.nav__launch {
+    text-decoration: none;
+    transition: border-color 0.15s ease;
+  }
+  a.nav__launch:hover {
+    border-color: var(--accent);
   }
   .menu {
     display: none;
