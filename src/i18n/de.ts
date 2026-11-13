@@ -345,6 +345,11 @@ export const de: Dict = {
   },
 
   enterprise: {
+    status: {
+      label: "In Entwicklung",
+      body: "Mentarika für Teams wird derzeit aktiv getestet und ist noch nicht verfügbar. Es wird später zusammen mit den kostenpflichtigen Tarifen freigeschaltet.",
+      contact: "Du möchtest erfahren, wann es losgeht, oder über einen Piloten sprechen? Schreib uns:",
+    },
     metaTitle: 'Mentarika für Teams – technisches Interview-Training und Kandidaten-Screening',
     metaDescription:
       'Strukturiertes KI-Interview-Training und Coding-Assessments für Engineering-Teams: Firmen-Interviews auf eurem Stack, Kandidaten-Einladungen mit Einwilligung und ein Team-Bericht, der nie einzelne Transkripte offenlegt.',

@@ -345,6 +345,11 @@ export const pl: Dict = {
   },
 
   enterprise: {
+    status: {
+      label: "W przygotowaniu",
+      body: "Mentarika dla zespołów jest w fazie aktywnych testów i nie jest jeszcze dostępna. Pojawi się później, razem z płatnymi planami.",
+      contact: "Chcesz wiedzieć, kiedy ruszy, albo porozmawiać o pilotażu? Napisz do nas:",
+    },
     metaTitle: 'Mentarika dla zespołów – trening rozmów technicznych i selekcja kandydatów',
     metaDescription:
       'Ustrukturyzowany trening rozmów z AI i zadania programistyczne dla zespołów inżynierskich: rozmowy firmowe na waszym stacku, zaproszenia kandydatów za zgodą i raport zespołu, który nigdy nie ujawnia indywidualnych transkrypcji.',

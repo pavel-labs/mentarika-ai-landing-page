@@ -345,6 +345,11 @@ export const es: Dict = {
   },
 
   enterprise: {
+    status: {
+      label: "En desarrollo",
+      body: "Mentarika para equipos está en pruebas activas y todavía no está disponible. Llegará más adelante, junto con los planes de pago.",
+      contact: "¿Quieres saber cuándo se abre o hablar de un piloto? Escríbenos:",
+    },
     metaTitle: 'Mentarika para equipos – práctica de entrevistas técnicas y cribado de candidatos',
     metaDescription:
       'Práctica de entrevistas con IA y evaluaciones de código para equipos de ingeniería: entrevistas de empresa con vuestro stack, invitaciones a candidatos con consentimiento y un informe de equipo que nunca expone transcripciones individuales.',

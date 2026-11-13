@@ -5,6 +5,13 @@ export const SITE = {
   // Fallback origin for the rare build without `site` configured. Kept in step with
   // astro.config.mjs's SITE_URL default.
   domain: 'https://mentarika.app',
+  supportEmail: 'support@mentarika.app',
+} as const;
+
+export const ENTERPRISE = {
+  // The organizations API is switched off on the backend, so the inquiry endpoint answers 404.
+  // While this is false the page shows an email address where the form would be.
+  inquiriesOpen: false,
 } as const;
 
 export const API = {

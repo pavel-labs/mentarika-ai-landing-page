@@ -184,6 +184,11 @@ export interface Dict {
   };
 
   enterprise: {
+    status: {
+      label: string;
+      body: string;
+      contact: string;
+    };
     metaTitle: string;
     metaDescription: string;
     hero: {

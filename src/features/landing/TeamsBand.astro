@@ -6,13 +6,16 @@ interface Props {
 }
 const { locale } = Astro.props;
 const tb = getDict(locale).teamsBand;
+const status = getDict(locale).enterprise.status;
 ---
 
 <section class="teams" aria-labelledby="teams-title">
   <div class="container">
     <div class="teams__panel theme theme--dark">
       <div class="teams__head">
-        <p class="eyebrow">{tb.eyebrow}</p>
+        <p class="eyebrow">
+          {tb.eyebrow} · {status.label}
+        </p>
         <h2 id="teams-title" class="h2">
           {tb.heading}
         </h2>

@@ -345,6 +345,11 @@ export const en: Dict = {
   },
 
   enterprise: {
+    status: {
+      label: "In development",
+      body: "Mentarika for teams is in active testing and is not open yet. It will become available later, together with paid plans.",
+      contact: "Want to hear when it opens, or to talk about a pilot? Write to us:",
+    },
     metaTitle: 'Mentarika for teams – technical interview practice and candidate screening',
     metaDescription:
       'Structured AI interview practice and coding assessments for engineering teams: company interviews on your stack, candidate assignments with consent, and a team report that never exposes individual transcripts.',

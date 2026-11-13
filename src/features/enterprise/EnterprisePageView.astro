@@ -1,8 +1,8 @@
 ---
-// /enterprise – Mentarika for teams. Every capability named here is live in the product;
-// planned items are listed separately under "not available yet".
+// /enterprise – Mentarika for teams. The product is built but not open: the page says so first,
+// and takes interest by email until the inquiry endpoint is switched on.
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { SITE } from '../../consts';
+import { ENTERPRISE, SITE } from '../../consts';
 import { getDict, localeHome, localePath, localeUrl, type Locale } from '../../i18n/index';
 import EnterpriseForm from './EnterpriseForm.astro';
 import EnterpriseUseCases from './EnterpriseUseCases.astro';
@@ -55,6 +55,13 @@ const breadcrumb = {
         <p class="lede" data-reveal style="--d:2">
           {e.hero.lede}
         </p>
+        <p class="ent-status" role="note" data-reveal style="--d:2">
+          <span class="pill ent-status__label">
+            <span class="dot" aria-hidden="true" />
+            {e.status.label}
+          </span>
+          <span>{e.status.body}</span>
+        </p>
         <div class="ent-hero__cta" data-reveal style="--d:3">
           <a class="btn" href="#contact">
             {e.hero.primary}
@@ -80,7 +87,18 @@ const breadcrumb = {
 
     <section class="ent-contact">
       <div class="container">
-        <EnterpriseForm locale={locale} />
+        {ENTERPRISE.inquiriesOpen ? (
+          <EnterpriseForm locale={locale} />
+        ) : (
+          <div class="ent-interest" id="contact">
+            <p class="eyebrow">{e.status.label}</p>
+            <p class="ent-interest__body">{e.status.body}</p>
+            <p class="ent-interest__contact">
+              {e.status.contact}{' '}
+              <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>
+            </p>
+          </div>
+        )}
         <a class="article" href={articleHref}>
           <span class="eyebrow">{e.article.eyebrow}</span>
           <span class="article__title">{e.article.title}</span>
@@ -112,6 +130,42 @@ const breadcrumb = {
     align-items: center;
     gap: 1.2rem 1.8rem;
     margin-top: 0.4rem;
+  }
+
+  .ent-status {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem 0.9rem;
+    max-width: 58ch;
+    margin: 0;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-lg);
+    background: var(--surface-subtle);
+    color: var(--text);
+  }
+  .ent-status__label {
+    flex: none;
+  }
+
+  .ent-interest {
+    display: grid;
+    gap: 0.8rem;
+    padding: clamp(1.6rem, 4vw, 3rem);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-lg);
+    background: var(--surface-subtle);
+  }
+  .ent-interest__body {
+    max-width: 52ch;
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 1rem + 0.8vw, 1.5rem);
+    font-weight: 600;
+  }
+  .ent-interest__contact a {
+    color: var(--accent-ink);
+    font-weight: 600;
   }
 
   .ent-steps {
