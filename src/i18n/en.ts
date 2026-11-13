@@ -569,13 +569,10 @@ export const en: Dict = {
   },
 
   badges: {
-    ariaGroup: 'Apps – coming soon',
     comingSoon: 'Coming soon to',
     ios: 'App Store',
     android: 'Google Play',
     web: 'the Web',
-    earlyAccessNote:
-      'Early access: the app is in limited testing and currently restricted to allow-listed IPs.',
   },
 
   footer: {

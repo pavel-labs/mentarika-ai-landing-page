@@ -570,13 +570,10 @@ export const es: Dict = {
   },
 
   badges: {
-    ariaGroup: 'Apps – próximamente',
     comingSoon: 'Próximamente en',
     ios: 'App Store',
     android: 'Google Play',
     web: 'la Web',
-    earlyAccessNote:
-      'Acceso anticipado: la app está en pruebas limitadas y, por ahora, solo accesible desde IPs autorizadas.',
   },
 
   footer: {

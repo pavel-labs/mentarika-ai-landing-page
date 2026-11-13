@@ -570,13 +570,10 @@ export const ru: Dict = {
   },
 
   badges: {
-    ariaGroup: 'Приложения – скоро',
     comingSoon: 'Скоро в',
     ios: 'App Store',
     android: 'Google Play',
     web: 'вебе',
-    earlyAccessNote:
-      'Ранний доступ: приложение на стадии ограниченного тестирования, сейчас доступ открыт только для IP из допуск-листа.',
   },
 
   footer: {

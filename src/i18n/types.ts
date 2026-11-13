@@ -275,12 +275,10 @@ export interface Dict {
   };
 
   badges: {
-    ariaGroup: string;
     comingSoon: string;
     ios: string;
     android: string;
     web: string;
-    earlyAccessNote: string;
   };
 
   footer: {
