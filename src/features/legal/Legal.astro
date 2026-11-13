@@ -12,7 +12,7 @@ interface Props {
 const { locale, doc } = Astro.props;
 const t = getDict(locale);
 const title = doc === 'privacy' ? t.legal.privacyTitle : t.legal.termsTitle;
-const sections = LEGAL_DOCS[doc];
+const sections = LEGAL_DOCS[locale][doc];
 ---
 
 <BaseLayout locale={locale} title={`${title} – Mentarika`} description={t.legal.notice}>
