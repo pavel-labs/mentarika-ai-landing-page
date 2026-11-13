@@ -19,14 +19,13 @@ export const en: Dict = {
     title: "Mentarika – AI practice for developers, QA and business consultants",
     description: "Practice technical interviews, QA scenarios and financial or business consulting with an AI tutor. Get feedback and reports. Specialized modes depend on pilot availability.",
     tagline: 'Practice the interview, not just the questions.',
-    launchLabel: 'In testing · Launching January 2027',
+    launchLabel: 'Open on the web · Free',
   },
 
   nav: [
     { label: 'Interviews', href: '#interview' },
     { label: 'Assessments', href: '#assessments' },
     { label: 'Pricing', href: '#pricing' },
-    { label: 'Teams', href: '/enterprise' },
     { label: 'Blog', href: '/blog' },
   ],
 
@@ -35,7 +34,7 @@ export const en: Dict = {
     titleLead: 'Practice the technical interview,',
     titleAccent: 'not just the questions.',
     lede: 'Mentarika runs a structured interview for your role and stack, follows up on what you actually said, grades your code against hidden tests, and gives you a report that points to your weak areas – so the next session targets them.',
-    availability: 'In testing · Launching January 2027 on Web, iOS & Android',
+    availability: 'Open on the web · Free · iOS and Android later',
     teamsLink: 'For engineering teams',
   },
 
@@ -235,9 +234,9 @@ export const en: Dict = {
 
   pricing: {
     eyebrow: 'Pricing',
-    heading: 'Start free. Upgrade when you are in an active job search.',
+    heading: 'Free to use. No card, no trial.',
     flag: 'For active job searches',
-    foot: 'The Pro price has not been set yet.',
+    foot: 'Limits renew every 30 days.',
     tiers: [
       {
         tier: 'Free',
@@ -249,11 +248,11 @@ export const en: Dict = {
           '3 voice interviews every 30 days',
           'Full report after every interview',
           'All roles, levels and technologies',
-          'Coding assessments',
+          '3 coding assessments every 30 days',
           'Daily challenges and achievements',
         ],
         featured: false,
-        cta: 'Launch details',
+        cta: 'Start free',
         href: '#waitlist',
       },
       {
@@ -329,27 +328,28 @@ export const en: Dict = {
       },
       {
         q: 'Can I answer out loud?',
-        a: 'Yes. Tap the mic, speak, and your answer is transcribed. The Free plan includes 3 voice interviews every 30 days; Pro has no limit.',
-      },
-      {
-        q: 'What does my employer see if my company uses Mentarika?',
-        a: 'Only your join date, how many interviews you did in the last 30 days, and when you were last active. Team skill averages appear only when at least five people contributed. No role in an organization can read your transcripts or your individual reports.',
+        a: 'Yes. Tap the mic, speak, and your answer is transcribed. You get 3 voice interviews every 30 days.',
       },
       {
         q: 'When can I use it?',
-        a: 'Mentarika is in limited testing now and launches on the web, iOS and Android in January 2027.',
+        a: 'Now. Mentarika is open on the web and free to use. iOS and Android apps come later.',
       },
     ],
   },
 
   cta: {
-    eyebrow: 'Launching January 2027',
+    eyebrow: 'Open on the web',
     titleLead: 'Your next interview is coming.',
     titleAccent: 'Practice before it does.',
-    lede: 'Mentarika opens on the web, iOS and Android in January 2027.',
+    lede: 'Mentarika is free on the web. Sign up and run your first interview today.',
   },
 
   enterprise: {
+    status: {
+      label: "In development",
+      body: "Mentarika for teams is in active testing and is not open yet. It will become available later, together with paid plans.",
+      contact: "Want to hear when it opens, or to talk about a pilot? Write to us:",
+    },
     metaTitle: 'Mentarika for teams – technical interview practice and candidate screening',
     metaDescription:
       'Structured AI interview practice and coding assessments for engineering teams: company interviews on your stack, candidate assignments with consent, and a team report that never exposes individual transcripts.',
@@ -574,13 +574,10 @@ export const en: Dict = {
   },
 
   badges: {
-    ariaGroup: 'Apps – coming soon',
     comingSoon: 'Coming soon to',
     ios: 'App Store',
     android: 'Google Play',
     web: 'the Web',
-    earlyAccessNote:
-      'Early access: the app is in limited testing and currently restricted to allow-listed IPs.',
   },
 
   footer: {
@@ -594,8 +591,7 @@ export const en: Dict = {
   legal: {
     privacyTitle: 'Privacy Policy',
     termsTitle: 'Terms of Service',
-    draftNotice:
-      'Draft – not legal advice. To be reviewed with counsel before launch; the English version is authoritative.',
+    notice: 'The English version of this page is the authoritative one.',
     updated: 'Last updated',
     back: 'Back to home',
   },

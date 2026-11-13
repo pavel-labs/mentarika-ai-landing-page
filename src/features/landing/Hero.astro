@@ -2,7 +2,7 @@
 import StoreBadges from '../../components/shared/StoreBadges.astro';
 import InterviewPreview from './InterviewPreview.astro';
 import { getDict, localePath, type Locale } from '../../i18n/index';
-import { marketingLabels } from '../../marketing/content';
+import { marketingLabels, marketingLinks } from '../../marketing/content';
 import type { IMarketingLanding } from '../../marketing/types.generated';
 interface Props {
   locale: Locale;
@@ -11,6 +11,10 @@ interface Props {
 const { locale, content } = Astro.props;
 const t = getDict(locale);
 const labels = marketingLabels(locale);
+// The app's address comes from the managed page when there is one and from the build otherwise, so
+// the first button opens the app either way instead of scrolling to the bottom of the page.
+const webAppUrl = (content?.links ?? marketingLinks(locale)).webAppUrl;
+const startLabel = content?.hero.ctaLabel ?? t.pricing.tiers[0]?.cta;
 ---
 
 <section class="hero">
@@ -33,18 +37,18 @@ const labels = marketingLabels(locale);
       {content?.hero.description ?? t.hero.lede}
     </p>
     <div class="hero__actions" data-preview="cta" data-reveal style="--d:3">
-      {content?.links.webAppUrl && (
+      {webAppUrl && (
         <a
           class="btn"
-          href={content.links.webAppUrl}
+          href={webAppUrl}
           data-marketing-event="web_app_cta"
           data-preview="hero.cta"
         >
-          {content.hero.ctaLabel}
+          {startLabel}
           <span aria-hidden="true">↗</span>
         </a>
       )}
-      {!content?.links.webAppUrl && (
+      {!webAppUrl && (
         <a class="btn" href={content ? '#product' : '#waitlist'}>
           {content ? labels.products : t.pricing.tiers[0]?.cta}
           <span aria-hidden="true">↓</span>

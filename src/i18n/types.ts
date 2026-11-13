@@ -184,6 +184,11 @@ export interface Dict {
   };
 
   enterprise: {
+    status: {
+      label: string;
+      body: string;
+      contact: string;
+    };
     metaTitle: string;
     metaDescription: string;
     hero: {
@@ -275,12 +280,10 @@ export interface Dict {
   };
 
   badges: {
-    ariaGroup: string;
     comingSoon: string;
     ios: string;
     android: string;
     web: string;
-    earlyAccessNote: string;
   };
 
   footer: {
@@ -294,7 +297,7 @@ export interface Dict {
   legal: {
     privacyTitle: string;
     termsTitle: string;
-    draftNotice: string;
+    notice: string;
     updated: string;
     back: string;
   };

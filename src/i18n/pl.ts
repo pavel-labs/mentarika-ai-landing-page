@@ -19,14 +19,13 @@ export const pl: Dict = {
     title: "Mentarika – praktyka AI dla programistów, QA i konsultantów",
     description: "Ćwicz rozmowy techniczne, scenariusze QA oraz doradztwo finansowe i biznesowe z AI. Otrzymuj raporty. Tryby specjalistyczne zależą od dostępności pilotażu.",
     tagline: 'Ćwicz rozmowę, nie tylko pytania.',
-    launchLabel: 'W testach · start w styczniu 2027',
+    launchLabel: 'Dostępne w przeglądarce · Za darmo',
   },
 
   nav: [
     { label: 'Rozmowy', href: '#interview' },
     { label: 'Zadania', href: '#assessments' },
     { label: 'Cennik', href: '#pricing' },
-    { label: 'Zespoły', href: '/enterprise' },
     { label: 'Blog', href: '/blog' },
   ],
 
@@ -35,7 +34,7 @@ export const pl: Dict = {
     titleLead: 'Ćwicz rozmowę techniczną,',
     titleAccent: 'nie tylko pytania.',
     lede: 'Mentarika prowadzi ustrukturyzowaną rozmowę dla twojej roli i stacku, dopytuje o to, co naprawdę powiedziałeś, ocenia twój kod ukrytymi testami i daje raport, który wskazuje słabe strony – żeby kolejna sesja celowała właśnie w nie.',
-    availability: 'W testach · start w styczniu 2027 na przeglądarce, iOS i Android',
+    availability: 'Dostępne w przeglądarce · Za darmo · iOS i Android później',
     teamsLink: 'Dla zespołów inżynierskich',
   },
 
@@ -235,9 +234,9 @@ export const pl: Dict = {
 
   pricing: {
     eyebrow: 'Cennik',
-    heading: 'Zacznij za darmo. Przejdź na Pro, gdy aktywnie szukasz pracy.',
+    heading: 'Za darmo. Bez karty i bez okresu próbnego.',
     flag: 'Na aktywne szukanie pracy',
-    foot: 'Cena Pro nie jest jeszcze ustalona.',
+    foot: 'Limity odnawiają się co 30 dni.',
     tiers: [
       {
         tier: 'Free',
@@ -249,11 +248,11 @@ export const pl: Dict = {
           '3 rozmowy głosowe co 30 dni',
           'Pełny raport po każdej rozmowie',
           'Wszystkie role, poziomy i technologie',
-          'Zadania programistyczne',
+          '3 zadania programistyczne co 30 dni',
           'Codzienne wyzwania i osiągnięcia',
         ],
         featured: false,
-        cta: 'Informacje o premierze',
+        cta: 'Zacznij za darmo',
         href: '#waitlist',
       },
       {
@@ -329,27 +328,28 @@ export const pl: Dict = {
       },
       {
         q: 'Czy mogę odpowiadać na głos?',
-        a: 'Tak. Dotknij mikrofonu, mów, a odpowiedź zostanie przepisana. Plan Free obejmuje 3 rozmowy głosowe co 30 dni; Pro nie ma limitu.',
+        a: 'Tak. Dotknij mikrofonu, mów, a odpowiedź zostanie przepisana. Masz 3 rozmowy głosowe co 30 dni.',
       },
       {
-        q: 'Co widzi mój pracodawca, jeśli firma korzysta z Mentarika?',
-        a: 'Tylko datę dołączenia, liczbę rozmów z ostatnich 30 dni i czas ostatniej aktywności. Średnie umiejętności zespołu pojawiają się dopiero, gdy wkład wniosło co najmniej pięć osób. Żadna rola w organizacji nie może czytać twoich transkrypcji ani indywidualnych raportów.',
-      },
-      {
-        q: 'Kiedy będę mógł z tego korzystać?',
-        a: 'Mentarika jest teraz w ograniczonych testach i startuje w przeglądarce, na iOS i Androidzie w styczniu 2027 roku.',
+        q: 'Kiedy mogę z tego korzystać?',
+        a: 'Już teraz. Mentarika jest dostępna w przeglądarce i jest darmowa. Aplikacje na iOS i Androida pojawią się później.',
       },
     ],
   },
 
   cta: {
-    eyebrow: 'Start w styczniu 2027',
+    eyebrow: 'Dostępne w przeglądarce',
     titleLead: 'Twoja kolejna rozmowa nadchodzi.',
     titleAccent: 'Poćwicz, zanim nadejdzie.',
-    lede: 'Mentarika startuje w przeglądarce, na iOS i Androidzie w styczniu 2027 roku.',
+    lede: 'Mentarika jest darmowa w przeglądarce. Zarejestruj się i zrób pierwszą rozmowę już dziś.',
   },
 
   enterprise: {
+    status: {
+      label: "W przygotowaniu",
+      body: "Mentarika dla zespołów jest w fazie aktywnych testów i nie jest jeszcze dostępna. Pojawi się później, razem z płatnymi planami.",
+      contact: "Chcesz wiedzieć, kiedy ruszy, albo porozmawiać o pilotażu? Napisz do nas:",
+    },
     metaTitle: 'Mentarika dla zespołów – trening rozmów technicznych i selekcja kandydatów',
     metaDescription:
       'Ustrukturyzowany trening rozmów z AI i zadania programistyczne dla zespołów inżynierskich: rozmowy firmowe na waszym stacku, zaproszenia kandydatów za zgodą i raport zespołu, który nigdy nie ujawnia indywidualnych transkrypcji.',
@@ -575,13 +575,10 @@ export const pl: Dict = {
   },
 
   badges: {
-    ariaGroup: 'Aplikacje – wkrótce',
     comingSoon: 'Wkrótce w',
     ios: 'App Store',
     android: 'Google Play',
     web: 'przeglądarce',
-    earlyAccessNote:
-      'Wczesny dostęp: aplikacja jest w ograniczonych testach i obecnie dostępna tylko z adresów IP z listy dozwolonych.',
   },
 
   footer: {
@@ -595,8 +592,7 @@ export const pl: Dict = {
   legal: {
     privacyTitle: 'Polityka prywatności',
     termsTitle: 'Regulamin',
-    draftNotice:
-      'Wersja robocza – to nie jest porada prawna. Do weryfikacji z prawnikiem przed premierą; wiążąca jest wersja angielska.',
+    notice: 'To jest tłumaczenie. W razie rozbieżności wiążąca jest wersja angielska.',
     updated: 'Ostatnia aktualizacja',
     back: 'Powrót na stronę główną',
   },

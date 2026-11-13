@@ -1,6 +1,6 @@
 ---
 import { getDict, resolveNavHref, type Locale } from '../../i18n/index';
-import { marketingSnapshot, marketingLabels } from '../../marketing/content';
+import { marketingLabels, marketingLinks, marketingSnapshot } from '../../marketing/content';
 import type { IMarketingLanding } from '../../marketing/types.generated';
 import SectionHead from '../../components/shared/SectionHead.astro';
 interface Props {
@@ -12,6 +12,7 @@ const pricing = getDict(locale).pricing;
 const labels = marketingLabels(locale);
 const prices = marketingSnapshot.pricing?.displayPrices;
 const showProPrice = false;
+const webAppUrl = (content?.links ?? marketingLinks(locale)).webAppUrl;
 const descriptions = content
   ? [
       content.pricing.freeDescription,
@@ -19,7 +20,8 @@ const descriptions = content
       content.pricing.enterpriseDescription,
     ]
   : [];
-const tiers = pricing.tiers.map((tier, index) => {
+// The public release has one plan. The CMS contract still describes all three.
+const tiers = pricing.tiers.slice(0, 1).map((tier, index) => {
   const isPro = index === 1;
   const proPrice = prices?.proMonthly ?? tier.price;
   if (!content) {
@@ -31,6 +33,8 @@ const tiers = pricing.tiers.map((tier, index) => {
             cadence: showProPrice && prices ? labels.month : tier.cadence,
           }
         : {}),
+      // "Start free" opens the app once it has an address, not the block at the end of the page.
+      ...(index === 0 && webAppUrl ? { href: webAppUrl } : {}),
     };
   }
   return {
@@ -118,7 +122,8 @@ const hrefFor = (href: string) =>
   }
   .tiers {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 28rem);
+    justify-content: center;
     gap: 1rem;
     align-items: stretch;
   }
