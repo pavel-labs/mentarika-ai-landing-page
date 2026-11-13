@@ -4,7 +4,7 @@
 //
 // `effectiveDate` is the single place to bump the "last updated" stamp.
 
-export const LEGAL_EFFECTIVE_DATE = '2026-11-08';
+export const LEGAL_EFFECTIVE_DATE = '2026-11-13';
 export const LEGAL_CONTACT = 'privacy@mentarika.app';
 
 export interface LegalSection {
@@ -62,7 +62,8 @@ export const PRIVACY: LegalSection[] = [
     heading: '6. Retention & deletion',
     body: [
       'We keep your account and interview data while your account exists. You can delete your account in-app at any time (Profile → Delete account); this permanently removes your data and identity from our systems. Detailed logs of AI requests are deleted after 90 days.',
-      'The retention periods for landing-page analytics events, server logs and analytics provider data have not yet been confirmed and must be added before launch.',
+      'Notification delivery history is deleted after 90 days. Counts of landing-site events are stored per day without any identifier and are deleted after 31 days.',
+      'Server logs and error reports are kept by our hosting and error-monitoring providers for the period their plan sets, and no longer than 90 days. If you opt in to website analytics, the analytics provider keeps its own data under its terms.',
     ],
   },
   {
@@ -78,7 +79,7 @@ export const PRIVACY: LegalSection[] = [
   {
     heading: '9. Changes & contact',
     body: [
-      `We will update this policy as the product evolves and note the date below. Questions or privacy requests: ${LEGAL_CONTACT}. Before launch, confirm that this mailbox is active and monitored, identify the data controller and its country/address, and document the legal bases and any international-transfer safeguards that apply to each processing activity.`,
+      `We will update this policy as the product evolves and note the date below. Questions or privacy requests: ${LEGAL_CONTACT}.`,
     ],
   },
 ];
